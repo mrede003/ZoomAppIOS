@@ -12,6 +12,8 @@
 		3003532B1ECE1D52003F6125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300353291ECE1D52003F6125 /* Main.storyboard */; };
 		3003532D1ECE1D52003F6125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3003532C1ECE1D52003F6125 /* Assets.xcassets */; };
 		300353301ECE1D52003F6125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3003532E1ECE1D52003F6125 /* LaunchScreen.storyboard */; };
+		308FF84B1F232A3C00DE408F /* Promos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FF84A1F232A3C00DE408F /* Promos.swift */; };
+		308FF84E1F232C5600DE408F /* Promo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FF84D1F232C5600DE408F /* Promo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		3003532C1ECE1D52003F6125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3003532F1ECE1D52003F6125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		300353311ECE1D52003F6125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		308FF84A1F232A3C00DE408F /* Promos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promos.swift; sourceTree = "<group>"; };
+		308FF84D1F232C5600DE408F /* Promo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				3003532C1ECE1D52003F6125 /* Assets.xcassets */,
 				3003532E1ECE1D52003F6125 /* LaunchScreen.storyboard */,
 				300353311ECE1D52003F6125 /* Info.plist */,
+				308FF84A1F232A3C00DE408F /* Promos.swift */,
+				308FF84D1F232C5600DE408F /* Promo.swift */,
 			);
 			path = Zoom;
 			sourceTree = "<group>";
@@ -96,6 +102,7 @@
 				TargetAttributes = {
 					300353211ECE1D52003F6125 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = AW3CR8KPBN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -137,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				300353281ECE1D52003F6125 /* ViewController.swift in Sources */,
+				308FF84B1F232A3C00DE408F /* Promos.swift in Sources */,
 				300353261ECE1D52003F6125 /* AppDelegate.swift in Sources */,
+				308FF84E1F232C5600DE408F /* Promo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +268,9 @@
 		300353351ECE1D52003F6125 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AW3CR8KPBN;
 				INFOPLIST_FILE = Zoom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrede003.zoomwireless.zoomapp.Zoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -271,8 +281,9 @@
 		300353361ECE1D52003F6125 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AW3CR8KPBN;
 				INFOPLIST_FILE = Zoom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrede003.zoomwireless.zoomapp.Zoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,6 +310,7 @@
 				300353361ECE1D52003F6125 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
