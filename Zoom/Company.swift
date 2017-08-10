@@ -17,8 +17,8 @@ struct Company {
     var monThursC: String
     var friO: String
     var friC: String
-    var satO: String
     var satC: String
+    var satO: String
     var sunO: String
     var sunC: String
     var emailPort: String
