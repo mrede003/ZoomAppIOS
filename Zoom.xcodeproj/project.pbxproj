@@ -12,8 +12,11 @@
 		3003532B1ECE1D52003F6125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300353291ECE1D52003F6125 /* Main.storyboard */; };
 		3003532D1ECE1D52003F6125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3003532C1ECE1D52003F6125 /* Assets.xcassets */; };
 		300353301ECE1D52003F6125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3003532E1ECE1D52003F6125 /* LaunchScreen.storyboard */; };
-		308FF84B1F232A3C00DE408F /* Promos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FF84A1F232A3C00DE408F /* Promos.swift */; };
+		302D31471F3BDBE50047E1B2 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D31461F3BDBE50047E1B2 /* Store.swift */; };
 		308FF84E1F232C5600DE408F /* Promo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FF84D1F232C5600DE408F /* Promo.swift */; };
+		308FF8501F23D5ED00DE408F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308FF84F1F23D5ED00DE408F /* GoogleService-Info.plist */; };
+		308FF8521F3A821200DE408F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FF8511F3A821200DE408F /* Company.swift */; };
+		92F9C92A72B1044A44770300 /* Pods_Zoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +27,13 @@
 		3003532C1ECE1D52003F6125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3003532F1ECE1D52003F6125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		300353311ECE1D52003F6125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		308FF84A1F232A3C00DE408F /* Promos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promos.swift; sourceTree = "<group>"; };
+		302D31461F3BDBE50047E1B2 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		308FF84D1F232C5600DE408F /* Promo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promo.swift; sourceTree = "<group>"; };
+		308FF84F1F23D5ED00DE408F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		308FF8511F3A821200DE408F /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		3E7C75D2EB437E4AE7E25339 /* Pods-Zoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zoom/Pods-Zoom.debug.xcconfig"; sourceTree = "<group>"; };
+		4843952BA37944BB739A106E /* Pods-Zoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zoom/Pods-Zoom.release.xcconfig"; sourceTree = "<group>"; };
+		901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F9C92A72B1044A44770300 /* Pods_Zoom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2376D78A94BA9198A0E6AC2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		300353191ECE1D52003F6125 = {
 			isa = PBXGroup;
 			children = (
 				300353241ECE1D52003F6125 /* Zoom */,
 				300353231ECE1D52003F6125 /* Products */,
+				8C4CA90F8E78CB3A9DD03899 /* Pods */,
+				2376D78A94BA9198A0E6AC2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +77,35 @@
 		300353241ECE1D52003F6125 /* Zoom */ = {
 			isa = PBXGroup;
 			children = (
+				308FF8531F3A8BAF00DE408F /* ModelObj */,
+				308FF84F1F23D5ED00DE408F /* GoogleService-Info.plist */,
 				300353251ECE1D52003F6125 /* AppDelegate.swift */,
 				300353271ECE1D52003F6125 /* ViewController.swift */,
 				300353291ECE1D52003F6125 /* Main.storyboard */,
 				3003532C1ECE1D52003F6125 /* Assets.xcassets */,
 				3003532E1ECE1D52003F6125 /* LaunchScreen.storyboard */,
 				300353311ECE1D52003F6125 /* Info.plist */,
-				308FF84A1F232A3C00DE408F /* Promos.swift */,
-				308FF84D1F232C5600DE408F /* Promo.swift */,
 			);
 			path = Zoom;
+			sourceTree = "<group>";
+		};
+		308FF8531F3A8BAF00DE408F /* ModelObj */ = {
+			isa = PBXGroup;
+			children = (
+				308FF8511F3A821200DE408F /* Company.swift */,
+				308FF84D1F232C5600DE408F /* Promo.swift */,
+				302D31461F3BDBE50047E1B2 /* Store.swift */,
+			);
+			name = ModelObj;
+			sourceTree = "<group>";
+		};
+		8C4CA90F8E78CB3A9DD03899 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E7C75D2EB437E4AE7E25339 /* Pods-Zoom.debug.xcconfig */,
+				4843952BA37944BB739A106E /* Pods-Zoom.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +115,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 300353341ECE1D52003F6125 /* Build configuration list for PBXNativeTarget "Zoom" */;
 			buildPhases = (
+				8988DC778535737AE8DD640C /* [CP] Check Pods Manifest.lock */,
 				3003531E1ECE1D52003F6125 /* Sources */,
 				3003531F1ECE1D52003F6125 /* Frameworks */,
 				300353201ECE1D52003F6125 /* Resources */,
+				9CA6FFEB60482287311E1CA5 /* [CP] Embed Pods Frameworks */,
+				03A2FB318D69189AFFDBA027 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				300353301ECE1D52003F6125 /* LaunchScreen.storyboard in Resources */,
+				308FF8501F23D5ED00DE408F /* GoogleService-Info.plist in Resources */,
 				3003532D1ECE1D52003F6125 /* Assets.xcassets in Resources */,
 				3003532B1ECE1D52003F6125 /* Main.storyboard in Resources */,
 			);
@@ -138,15 +180,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03A2FB318D69189AFFDBA027 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zoom/Pods-Zoom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8988DC778535737AE8DD640C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9CA6FFEB60482287311E1CA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zoom/Pods-Zoom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3003531E1ECE1D52003F6125 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302D31471F3BDBE50047E1B2 /* Store.swift in Sources */,
 				300353281ECE1D52003F6125 /* ViewController.swift in Sources */,
-				308FF84B1F232A3C00DE408F /* Promos.swift in Sources */,
 				300353261ECE1D52003F6125 /* AppDelegate.swift in Sources */,
 				308FF84E1F232C5600DE408F /* Promo.swift in Sources */,
+				308FF8521F3A821200DE408F /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +358,7 @@
 		};
 		300353351ECE1D52003F6125 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E7C75D2EB437E4AE7E25339 /* Pods-Zoom.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = AW3CR8KPBN;
 				INFOPLIST_FILE = Zoom/Info.plist;
@@ -280,6 +372,7 @@
 		};
 		300353361ECE1D52003F6125 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4843952BA37944BB739A106E /* Pods-Zoom.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = AW3CR8KPBN;
 				INFOPLIST_FILE = Zoom/Info.plist;
