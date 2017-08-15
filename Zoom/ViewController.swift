@@ -11,25 +11,48 @@ import Firebase
 
 class ViewController: UIViewController {
 
-    var ref: DatabaseReference!
-    
+    var ref: DatabaseReference?
+    var companyDictionary: NSDictionary?
+    var promosArray: NSArray?
+    var storeDictionary: NSDictionary?
+    var companyObj: Company?
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference().child("company").child("zoom")
-        let word = "hello"
-        print(word)
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            
-            let twitter_username = value?["twitter_username"] as? String ?? ""
-            print(twitter_username)
-            
+        ref = Database.database().reference()
+        ref?.observeSingleEvent(of: .value, with: { (snapshot) in
+            self.companyDictionary = snapshot.value as? NSDictionary
         })
+        
+        loadFirebase()
+        print("Database loaded.... Hopefully")
         //begin to populate the database
         //load the initial screen
         //add listeners?
     }
-
+    func loadFirebase()
+    {
+        
+        ref = Database.database().reference()
+        ref?.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let dict = snapshot.value as? NSDictionary {
+                
+                //Populate the company information
+                if let newDict = dict["company"] as? NSDictionary {                     //This right here is an example of bad database design
+                    self.companyDictionary = newDict["zoom"] as? NSDictionary ?? nil
+                }
+                
+                //Populate all the stores information
+                self.storeDictionary = dict["stores"] as? NSDictionary ?? nil
+                
+                //Populate all promo information
+                self.promosArray = dict["promos"] as? NSArray ?? nil
+            }
+        })
+        print("hello")
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
