@@ -46,7 +46,7 @@ class ViewController: UIViewController {
                 self.storeDictionary = dict["stores"] as? NSDictionary ?? nil
                 
                 //Populate all promo information
-                self.promosArray = dict["promos"] as? NSArray ?? nil
+                self.promosArray = dict["promos"] as? NSArray ?? nil //test
             }
         })
         print("hello")
