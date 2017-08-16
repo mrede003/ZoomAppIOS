@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var promosArray: NSArray?
     var storeDictionary: NSDictionary?
     var companyObj: Company?
+    var promoList: Promos?
+    var storeList: Stores?
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -40,13 +42,22 @@ class ViewController: UIViewController {
                 //Populate the company information
                 if let newDict = dict["company"] as? NSDictionary {                     //This right here is an example of bad database design
                     self.companyDictionary = newDict["zoom"] as? NSDictionary ?? nil
+                    if (self.companyDictionary != nil){
+                        self.companyObj = Company(dictionary: self.companyDictionary!)
+                    }
                 }
                 
                 //Populate all the stores information
                 self.storeDictionary = dict["stores"] as? NSDictionary ?? nil
+                if(self.storeDictionary != nil) {
+                    self.storeList = Stores(storeDict: self.storeDictionary!)
+                }
                 
                 //Populate all promo information
-                self.promosArray = dict["promos"] as? NSArray ?? nil //test
+                self.promosArray = dict["promos"] as? NSArray ?? nil
+                if (self.promosArray != nil) {
+                    self.promoList = Promos(promoArray: self.promosArray as! [NSDictionary])
+                }
             }
         })
         print("hello")
