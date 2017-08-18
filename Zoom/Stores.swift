@@ -15,8 +15,16 @@ class Stores {
     
     init(storeDict: NSDictionary) {
         storeList = [Store]()
-        let tempStore = Store(storeInfo: storeDict["cedar"] as! NSDictionary)
-        storeList?.append(tempStore)
+        for (key, value) in storeDict {
+            let tempStore = Store(storeInfo: storeDict[key] as! NSDictionary)
+            storeList?.append(tempStore)
+        }
+        
+    }
+    func printStores() {
+        for i in 0..<storeList!.count {
+            storeList![i].printName()
+        }
     }
 
 
@@ -40,6 +48,10 @@ class Stores {
             self.latitude = storeInfo["latitude"] as? Double ?? 0.0
             self.longitude = storeInfo["longitude"] as? Double ?? 0.0
             self.milesAway = 100.0
+        }
+        
+        func printName() {
+            print("Store Name: "+self.name!)
         }
     }
 }

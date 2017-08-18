@@ -21,6 +21,11 @@ class Promos {
             promoList?.append(tempPromo)
         }
     }
+    func printPromos() {
+        for i in 0..<promoList!.count {
+            promoList![i].printName()
+        }
+    }
     
     //Data object that holds promo information
     class Promo {
@@ -38,6 +43,9 @@ class Promos {
             self.imgName = info["imgName"] as? String ?? "www.imgur.com"
             self.name = info["name"] as? String ?? "Promo Name"
             self.previewImg = info["previewImg"] as? String ?? "www.imgur.com"
+        }
+        func printName() {
+            print("Promo Name \(self.name!)")
         }
     }
 }

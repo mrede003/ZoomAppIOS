@@ -18,22 +18,24 @@ class ViewController: UIViewController {
     var companyObj: Company?
     var promoList: Promos?
     var storeList: Stores?
+    var shouldLeaveGroupOnProcess = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadFirebase()
+        
+        
+        //load the initial screen
+        //add listeners?
+    }
+    
+    func loadFirebase()
+    {
         ref = Database.database().reference()
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             self.companyDictionary = snapshot.value as? NSDictionary
         })
-        
-        loadFirebase()
-        print("Database loaded.... Hopefully")
-        //begin to populate the database
-        //load the initial screen
-        //add listeners?
-    }
-    func loadFirebase()
-    {
-        
         ref = Database.database().reference()
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -58,7 +60,13 @@ class ViewController: UIViewController {
                 if (self.promosArray != nil) {
                     self.promoList = Promos(promoArray: self.promosArray as! [NSDictionary])
                 }
+                self.storeList!.printStores()
+                self.promoList!.printPromos()
+                self.companyObj!.printName()
+                
+                //go to next view
             }
+            
         })
         print("hello")
         

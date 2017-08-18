@@ -62,4 +62,8 @@ class Company {
         self.google_plus_id = dictionary["google_plus_id"] as? String ?? "+verizon"
         self.website_url = dictionary["website_url"] as? String ?? "https://www.verizon.com"
     }
+    
+    func printName() {
+        print("Company Name \(self.twitter_username)")
+    }
 }
