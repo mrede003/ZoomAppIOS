@@ -9,11 +9,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    @IBOutlet weak var ButtonBarStackView: UIStackView!
-    @IBOutlet weak var HorizontalButtonView: UIStackView!
-    @IBOutlet weak var HorizontalLabelView: UIStackView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

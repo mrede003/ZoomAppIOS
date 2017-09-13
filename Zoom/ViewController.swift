@@ -67,7 +67,7 @@ class ViewController: UIViewController {
                 //go to next view
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home_Screen") as! MainViewController
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
                 self.present(nextViewController, animated:true, completion:nil)
             }
             
