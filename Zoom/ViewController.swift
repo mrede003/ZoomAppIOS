@@ -42,7 +42,7 @@ class ViewController: UIViewController {
             if let dict = snapshot.value as? NSDictionary {
                 
                 //Populate the company information
-                if let newDict = dict["company"] as? NSDictionary {                     //This right here is an example of bad database design
+                if let newDict = dict["company"] as? NSDictionary {  //This right here is an example of bad database design
                     self.companyDictionary = newDict["zoom"] as? NSDictionary ?? nil
                     if (self.companyDictionary != nil){
                         self.companyObj = Company(dictionary: self.companyDictionary!)
@@ -65,6 +65,10 @@ class ViewController: UIViewController {
                 self.companyObj!.printName()
                 
                 //go to next view
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home_Screen") as! MainViewController
+                self.present(nextViewController, animated:true, completion:nil)
             }
             
         })
