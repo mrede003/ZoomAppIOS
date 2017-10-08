@@ -244,7 +244,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jix-fs-SQ9" id="JzJ-3W-vQy">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zMX-6Z-mDF">
@@ -320,7 +320,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h6m-Ug-nNf" id="XQL-OS-niT">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Bk-c1-ROk">
@@ -852,7 +852,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M2Y-1D-t87" id="3QT-9c-LE5">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xsa-Nc-EEW">
@@ -879,7 +879,7 @@
                                 <connections>
                                     <outlet property="promoDescription" destination="Pl9-vy-QFQ" id="9SH-UA-HSs"/>
                                     <outlet property="promoPreviewImage" destination="Xsa-Nc-EEW" id="5NM-mt-XVB"/>
-                                    <segue destination="zte-SO-qOe" kind="show" id="blt-6V-f3p"/>
+                                    <segue destination="zte-SO-qOe" kind="show" identifier="PromoToPromoDisplay" id="blt-6V-f3p"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -890,17 +890,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="bca-Sc-wqY"/>
                     <connections>
-                        <segue destination="zte-SO-qOe" kind="show" id="t9A-Xz-2lr"/>
+                        <segue destination="zte-SO-qOe" kind="show" identifier="" id="t9A-Xz-2lr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jU-s3-JQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1043" y="-126"/>
         </scene>
-        <!--View Controller-->
+        <!--Promo Display View Controller-->
         <scene sceneID="VEu-59-YBQ">
             <objects>
-                <viewController storyboardIdentifier="PromoDisplay" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zte-SO-qOe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PromoDisplay" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zte-SO-qOe" customClass="PromoDisplayViewController" customModule="Zoom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s2m-VB-6F4"/>
                         <viewControllerLayoutGuide type="bottom" id="Jeg-fH-unc"/>
@@ -913,28 +913,28 @@
                                 <rect key="frame" x="16" y="20" width="288" height="255.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngP-tB-Vab">
-                                <rect key="frame" x="16" y="275.5" width="288" height="93.5"/>
+                                <rect key="frame" x="16" y="275.5" width="288" height="122"/>
                                 <string key="text">This is a test This is a test This is a test This is a test This is a test This is a test This is a test This is a test This is a test This is a test </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-cT-dm5">
-                                <rect key="frame" x="16" y="369" width="288" height="199"/>
+                                <rect key="frame" x="16" y="397.5" width="288" height="170.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjh-n1-It0">
-                                        <rect key="frame" x="0.0" y="129.5" width="288" height="69.5"/>
+                                        <rect key="frame" x="0.0" y="119.5" width="288" height="51"/>
                                         <state key="normal" image="promo_call"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_medium" translatesAutoresizingMaskIntoConstraints="NO" id="vHE-oe-47m">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="60"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ZoomLogo" image="logo_medium" translatesAutoresizingMaskIntoConstraints="NO" id="vHE-oe-47m" customClass="CustomBorderUIImageView" customModule="Zoom" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="59.5"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zoom_logo" translatesAutoresizingMaskIntoConstraints="NO" id="UsB-Qg-Epw">
-                                        <rect key="frame" x="144" y="0.0" width="144" height="60"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zoom_logo" translatesAutoresizingMaskIntoConstraints="NO" id="UsB-Qg-Epw" customClass="CustomBorderUIImageView" customModule="Zoom" customModuleProvider="target">
+                                        <rect key="frame" x="144" y="0.0" width="144" height="59.5"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interested? Press below to talk to a LOCAL specialist!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-Wa-rA7">
-                                        <rect key="frame" x="0.0" y="60" width="288" height="69.5"/>
+                                        <rect key="frame" x="0.0" y="59.5" width="288" height="60"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -948,10 +948,10 @@
                                     <constraint firstItem="UsB-Qg-Epw" firstAttribute="top" secondItem="SSt-cT-dm5" secondAttribute="top" id="AuM-6H-dk4"/>
                                     <constraint firstAttribute="bottom" secondItem="kjh-n1-It0" secondAttribute="bottom" id="Cf3-Uc-5uM"/>
                                     <constraint firstItem="kjh-n1-It0" firstAttribute="leading" secondItem="SSt-cT-dm5" secondAttribute="leading" id="Ldq-T7-LHz"/>
-                                    <constraint firstItem="kjh-n1-It0" firstAttribute="height" secondItem="SSt-cT-dm5" secondAttribute="height" multiplier="0.35" id="OFo-k8-cUm"/>
+                                    <constraint firstItem="kjh-n1-It0" firstAttribute="height" secondItem="SSt-cT-dm5" secondAttribute="height" multiplier="0.3" id="OFo-k8-cUm"/>
                                     <constraint firstItem="EN7-Wa-rA7" firstAttribute="leading" secondItem="SSt-cT-dm5" secondAttribute="leading" id="Omj-A2-frH"/>
                                     <constraint firstItem="vHE-oe-47m" firstAttribute="width" secondItem="SSt-cT-dm5" secondAttribute="width" multiplier="0.5" id="TS4-pk-Nw4"/>
-                                    <constraint firstItem="vHE-oe-47m" firstAttribute="height" secondItem="SSt-cT-dm5" secondAttribute="height" multiplier="0.3" id="WhI-Lw-ig3"/>
+                                    <constraint firstItem="vHE-oe-47m" firstAttribute="height" secondItem="SSt-cT-dm5" secondAttribute="height" multiplier="0.35" id="WhI-Lw-ig3"/>
                                     <constraint firstAttribute="trailing" secondItem="EN7-Wa-rA7" secondAttribute="trailing" id="ZY4-V4-fmh"/>
                                     <constraint firstItem="UsB-Qg-Epw" firstAttribute="height" secondItem="vHE-oe-47m" secondAttribute="height" id="izf-tF-F0r"/>
                                     <constraint firstAttribute="trailing" secondItem="kjh-n1-It0" secondAttribute="trailing" id="mmZ-ZZ-VqE"/>
@@ -970,13 +970,20 @@
                             <constraint firstItem="SSt-cT-dm5" firstAttribute="top" secondItem="ngP-tB-Vab" secondAttribute="bottom" id="REV-zH-uVA"/>
                             <constraint firstItem="SSt-cT-dm5" firstAttribute="leading" secondItem="zTt-R9-CGs" secondAttribute="leadingMargin" id="WnA-Gq-Xqf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SSt-cT-dm5" secondAttribute="trailing" id="XJZ-xn-Y3Z"/>
-                            <constraint firstItem="SSt-cT-dm5" firstAttribute="height" secondItem="zTt-R9-CGs" secondAttribute="height" multiplier="0.35" id="ZIM-P0-VYX"/>
+                            <constraint firstItem="SSt-cT-dm5" firstAttribute="height" secondItem="zTt-R9-CGs" secondAttribute="height" multiplier="0.3" id="ZIM-P0-VYX"/>
                             <constraint firstItem="Jeg-fH-unc" firstAttribute="top" secondItem="SSt-cT-dm5" secondAttribute="bottom" id="aqZ-ha-Sxv"/>
                             <constraint firstItem="ngP-tB-Vab" firstAttribute="top" secondItem="ETb-Dv-RH5" secondAttribute="bottom" id="bd3-Xc-xO1"/>
                             <constraint firstItem="ETb-Dv-RH5" firstAttribute="trailing" secondItem="zTt-R9-CGs" secondAttribute="trailingMargin" id="eQk-pK-xZ8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ngP-tB-Vab" secondAttribute="trailing" id="pmy-nn-lff"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CallStoreButton" destination="kjh-n1-It0" id="Ded-i8-Wyl"/>
+                        <outlet property="PromoDescription" destination="ngP-tB-Vab" id="f4f-YF-See"/>
+                        <outlet property="PromoImage" destination="ETb-Dv-RH5" id="osG-Vv-Gpt"/>
+                        <outlet property="VerizonLogoImage" destination="vHE-oe-47m" id="fyn-3D-Rec"/>
+                        <outlet property="ZoomLogoImage" destination="UsB-Qg-Epw" id="1tD-vI-CXf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOA-cV-oMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -985,7 +992,6 @@
         <!--View Controller-->
         <scene sceneID="kC8-A6-3B4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LiY-0e-dZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="WG7-Ar-eHb" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xwO-Ke-2up"/>
@@ -1283,6 +1289,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LiY-0e-dZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3032" y="394"/>
         </scene>
@@ -1307,11 +1314,11 @@
         <image name="zoom_logo" width="161" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="o11-Kt-sPa"/>
         <segue reference="Xr7-mq-orO"/>
-        <segue reference="TWQ-NC-p3D"/>
         <segue reference="w11-cY-fbf"/>
+        <segue reference="TWQ-NC-p3D"/>
+        <segue reference="o11-Kt-sPa"/>
+        <segue reference="blt-6V-f3p"/>
         <segue reference="waf-Zt-K5J"/>
-        <segue reference="t9A-Xz-2lr"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class PromoTableViewController: UITableViewController {
 
     var promoList: Promos?
@@ -48,10 +48,22 @@ class PromoTableViewController: UITableViewController {
         
         let currentPromo = promoList?.promoList?[indexPath.row]
         cell.promoDescription.text = currentPromo?.name
-
-        // Configure the cell...
-
+        let url = URL(string: (currentPromo?.previewImg)!)
+        cell.promoPreviewImage.kf.setImage(with: url)
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PromoToPromoDisplay" {
+            let secondController = segue.destination as! PromoDisplayViewController
+            let selectedIndex = tableView.indexPathForSelectedRow?.row
+            let currentPromo = promoList?.promoList?[selectedIndex!]
+            
+            secondController.imageURL = URL(string: (currentPromo?.imgName)!)
+            secondController.promoDescriptionText = currentPromo?.description
+
+        }
+        
     }
  
 
