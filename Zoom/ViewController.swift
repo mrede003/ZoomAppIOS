@@ -60,28 +60,31 @@ class ViewController: UIViewController {
                 if (self.promosArray != nil) {
                     self.promoList = Promos(promoArray: self.promosArray as! [NSDictionary])
                 }
-                self.storeList!.printStores()
-                self.promoList!.printPromos()
-                self.companyObj!.printName()
+                
+                //prepare segue
+                self.performSegue(withIdentifier: "IntitialSegue", sender: self)
                 
                 //go to next view
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NavController") as! NavController
                 self.present(nextViewController, animated:true, completion:nil)
             }
             
         })
-        print("hello")
-        
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationViewController = segue.destination as? NavController
+        let viewController = navigationViewController?.topViewController as! MainViewController
+        viewController.companyObj = self.companyObj
+        viewController.promoList = self.promoList
+        viewController.storeList = self.storeList
+    }
 
 }
 

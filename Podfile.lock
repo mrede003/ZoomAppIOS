@@ -21,6 +21,7 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - Kingfisher (4.1.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - Firebase
   - Firebase/Database
+  - Kingfisher (~> 4.0)
 
 SPEC CHECKSUMS:
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
@@ -38,8 +40,9 @@ SPEC CHECKSUMS:
   FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
+  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 8eae227f1048d2284782829abe11fd905c9d5e11
+PODFILE CHECKSUM: a338e04e12449781f8b211826b764e37ef3f434e
 
 COCOAPODS: 1.2.1

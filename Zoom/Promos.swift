@@ -27,6 +27,10 @@ class Promos {
         }
     }
     
+    
+    
+    
+    
     //Data object that holds promo information
     class Promo {
         public private(set) var description : String?

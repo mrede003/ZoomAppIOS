@@ -8,4 +8,5 @@ target 'Zoom' do
   # Pods for Zoom
     pod 'Firebase'
     pod 'Firebase/Database'
+    pod 'Kingfisher', '~> 4.0'
 end

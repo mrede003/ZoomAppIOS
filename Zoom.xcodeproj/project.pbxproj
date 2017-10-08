@@ -19,6 +19,10 @@
 		30D5D6C61F68BA09009B722E /* PromoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5D6C51F68BA09009B722E /* PromoListTableViewCell.swift */; };
 		30DC804F1F6F73930096073C /* LocationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC804E1F6F73930096073C /* LocationTableCell.swift */; };
 		30DC80511F7200800096073C /* SocialMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC80501F7200800096073C /* SocialMediaTableViewCell.swift */; };
+		30DC80531F74984E0096073C /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC80521F74984E0096073C /* NavController.swift */; };
+		30DC80551F74AB760096073C /* AppointmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC80541F74AB760096073C /* AppointmentController.swift */; };
+		30DC805B1F79DB2C0096073C /* PromoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC805A1F79DB2C0096073C /* PromoDisplayViewController.swift */; };
+		30DC805D1F79DCDC0096073C /* PromoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC805C1F79DCDC0096073C /* PromoTableViewController.swift */; };
 		92F9C92A72B1044A44770300 /* Pods_Zoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		30D5D6C51F68BA09009B722E /* PromoListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoListTableViewCell.swift; sourceTree = "<group>"; };
 		30DC804E1F6F73930096073C /* LocationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableCell.swift; sourceTree = "<group>"; };
 		30DC80501F7200800096073C /* SocialMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaTableViewCell.swift; sourceTree = "<group>"; };
+		30DC80521F74984E0096073C /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
+		30DC80541F74AB760096073C /* AppointmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentController.swift; sourceTree = "<group>"; };
+		30DC805A1F79DB2C0096073C /* PromoDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoDisplayViewController.swift; sourceTree = "<group>"; };
+		30DC805C1F79DCDC0096073C /* PromoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoTableViewController.swift; sourceTree = "<group>"; };
 		3E7C75D2EB437E4AE7E25339 /* Pods-Zoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zoom/Pods-Zoom.debug.xcconfig"; sourceTree = "<group>"; };
 		4843952BA37944BB739A106E /* Pods-Zoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zoom/Pods-Zoom.release.xcconfig"; sourceTree = "<group>"; };
 		901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +102,10 @@
 				30D5D6C51F68BA09009B722E /* PromoListTableViewCell.swift */,
 				30DC804E1F6F73930096073C /* LocationTableCell.swift */,
 				30DC80501F7200800096073C /* SocialMediaTableViewCell.swift */,
+				30DC80521F74984E0096073C /* NavController.swift */,
+				30DC80541F74AB760096073C /* AppointmentController.swift */,
+				30DC805A1F79DB2C0096073C /* PromoDisplayViewController.swift */,
+				30DC805C1F79DCDC0096073C /* PromoTableViewController.swift */,
 			);
 			path = Zoom;
 			sourceTree = "<group>";
@@ -245,8 +257,12 @@
 				30CA140E1F43D8F10003E1CC /* Stores.swift in Sources */,
 				300353281ECE1D52003F6125 /* ViewController.swift in Sources */,
 				30DC804F1F6F73930096073C /* LocationTableCell.swift in Sources */,
+				30DC80551F74AB760096073C /* AppointmentController.swift in Sources */,
 				300353261ECE1D52003F6125 /* AppDelegate.swift in Sources */,
+				30DC805B1F79DB2C0096073C /* PromoDisplayViewController.swift in Sources */,
+				30DC80531F74984E0096073C /* NavController.swift in Sources */,
 				30D5D6C41F622EA8009B722E /* MainViewController.swift in Sources */,
+				30DC805D1F79DCDC0096073C /* PromoTableViewController.swift in Sources */,
 				30DC80511F7200800096073C /* SocialMediaTableViewCell.swift in Sources */,
 				308FF8521F3A821200DE408F /* Company.swift in Sources */,
 				30CA140C1F43BEAD0003E1CC /* Promos.swift in Sources */,
