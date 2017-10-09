@@ -1,63 +1,65 @@
 //
-//  PromoTableViewController.swift
+//  LocationTableViewController.swift
 //  Zoom
 //
-//  Created by Matthew Redenius on 9/25/17.
+//  Created by Matthew Redenius on 10/8/17.
 //  Copyright © 2017 Matt Redenius. All rights reserved.
 //
 
 import UIKit
-import Kingfisher
-class PromoTableViewController: UITableViewController {
 
-    var promoList: Promos?
+class LocationTableViewController: UITableViewController {
+
     var storeList: Stores?
+    var companyInfo: Company?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        promoList?.printPromos()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 1;
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (promoList?.promoList?.count)!
+        return (storeList?.storeList?.count)!
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "PromoListTableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! PromoListTableViewCell
+        let cellIdentifier = "LocationTableCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! LocationTableCell
         
-        let currentPromo = promoList?.promoList?[indexPath.row]
-        cell.promoDescription.text = currentPromo?.name
-        let url = URL(string: (currentPromo?.previewImg)!)
-        cell.promoPreviewImage.kf.setImage(with: url)
+        let currentStore = storeList?.storeList?[indexPath.row]
+        cell.storeNameLabel.text = currentStore?.name
+        cell.storeAddressLabel.text = currentStore?.address
+        let url = URL(string: (currentStore?.storeImgPre)!)
+        cell.locationImage.kf.setImage(with: url)
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PromoToPromoDisplay" {
-            let secondController = segue.destination as! PromoDisplayViewController
+        if segue.identifier == "LocationListToLocationDisplay" {
+            let secondController = segue.destination as! LocationViewController
             let selectedIndex = tableView.indexPathForSelectedRow?.row
-            let currentPromo = promoList?.promoList?[selectedIndex!]
+            let currentStore = storeList?.storeList?[selectedIndex!]
             
-            secondController.imageURL = URL(string: (currentPromo?.imgName)!)
-            secondController.promoDescriptionText = currentPromo?.description
+            secondController.imageURL = URL(string: (currentStore?.storeImg)!)
+            secondController.storeBioText = currentStore?.bio
+            secondController.storeAddressText = currentStore?.address
+            secondController.title = currentStore?.name
         }
     }
- 
 
     /*
     // Override to support conditional editing of the table view.

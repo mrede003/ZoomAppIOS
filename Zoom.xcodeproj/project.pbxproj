@@ -25,6 +25,9 @@
 		30DC805D1F79DCDC0096073C /* PromoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC805C1F79DCDC0096073C /* PromoTableViewController.swift */; };
 		30DC80631F8AAB9D0096073C /* CustomBorderUiTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC80621F8AAB9D0096073C /* CustomBorderUiTextView.swift */; };
 		30DC80651F8AAC0E0096073C /* CustomBorderUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC80641F8AAC0E0096073C /* CustomBorderUIImageView.swift */; };
+		30DC80671F8AC8580096073C /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC80661F8AC8580096073C /* LocationTableViewController.swift */; };
+		30DC80691F8AC9240096073C /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC80681F8AC9240096073C /* LocationViewController.swift */; };
+		30DC806B1F8AF2E60096073C /* CustomBorderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC806A1F8AF2E60096073C /* CustomBorderUIView.swift */; };
 		92F9C92A72B1044A44770300 /* Pods_Zoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		30DC805C1F79DCDC0096073C /* PromoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoTableViewController.swift; sourceTree = "<group>"; };
 		30DC80621F8AAB9D0096073C /* CustomBorderUiTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorderUiTextView.swift; sourceTree = "<group>"; };
 		30DC80641F8AAC0E0096073C /* CustomBorderUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorderUIImageView.swift; sourceTree = "<group>"; };
+		30DC80661F8AC8580096073C /* LocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
+		30DC80681F8AC9240096073C /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		30DC806A1F8AF2E60096073C /* CustomBorderUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorderUIView.swift; sourceTree = "<group>"; };
 		3E7C75D2EB437E4AE7E25339 /* Pods-Zoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zoom/Pods-Zoom.debug.xcconfig"; sourceTree = "<group>"; };
 		4843952BA37944BB739A106E /* Pods-Zoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zoom/Pods-Zoom.release.xcconfig"; sourceTree = "<group>"; };
 		901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +118,9 @@
 				30DC805C1F79DCDC0096073C /* PromoTableViewController.swift */,
 				30DC80621F8AAB9D0096073C /* CustomBorderUiTextView.swift */,
 				30DC80641F8AAC0E0096073C /* CustomBorderUIImageView.swift */,
+				30DC80661F8AC8580096073C /* LocationTableViewController.swift */,
+				30DC80681F8AC9240096073C /* LocationViewController.swift */,
+				30DC806A1F8AF2E60096073C /* CustomBorderUIView.swift */,
 			);
 			path = Zoom;
 			sourceTree = "<group>";
@@ -263,9 +272,12 @@
 				30CA140E1F43D8F10003E1CC /* Stores.swift in Sources */,
 				300353281ECE1D52003F6125 /* ViewController.swift in Sources */,
 				30DC804F1F6F73930096073C /* LocationTableCell.swift in Sources */,
+				30DC80691F8AC9240096073C /* LocationViewController.swift in Sources */,
+				30DC80671F8AC8580096073C /* LocationTableViewController.swift in Sources */,
 				30DC80551F74AB760096073C /* AppointmentController.swift in Sources */,
 				300353261ECE1D52003F6125 /* AppDelegate.swift in Sources */,
 				30DC80631F8AAB9D0096073C /* CustomBorderUiTextView.swift in Sources */,
+				30DC806B1F8AF2E60096073C /* CustomBorderUIView.swift in Sources */,
 				30DC805B1F79DB2C0096073C /* PromoDisplayViewController.swift in Sources */,
 				30DC80531F74984E0096073C /* NavController.swift in Sources */,
 				30D5D6C41F622EA8009B722E /* MainViewController.swift in Sources */,

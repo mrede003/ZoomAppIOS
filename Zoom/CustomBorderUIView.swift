@@ -1,5 +1,5 @@
 //
-//  CustomBorderUIImageView.swift
+//  CustomBorderUIView.swift
 //  Zoom
 //
 //  Created by Matthew Redenius on 10/8/17.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class CustomBorderUIImageView: UIImageView {
+class CustomBorderUIView: UIView {
+
     func addBorder(edges: UIRectEdge, color: UIColor = UIColor.white, thickness: CGFloat = 1.0) -> [UIView] {
         
         var borders = [UIView]()

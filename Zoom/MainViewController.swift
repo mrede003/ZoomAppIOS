@@ -47,9 +47,16 @@ class MainViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MainToPromoTableSeque" {
+            
             let secondController = segue.destination as! PromoTableViewController
             secondController.promoList = self.promoList
             secondController.storeList = self.storeList
+        } else if segue.identifier == "MaintoLocations" {
+            
+            let secondController = segue.destination as! LocationTableViewController
+            secondController.companyInfo = self.companyObj
+            secondController.storeList = self.storeList
+            print("Code made it through the segue")
         }
         
     }
