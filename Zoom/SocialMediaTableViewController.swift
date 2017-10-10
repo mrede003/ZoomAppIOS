@@ -1,29 +1,28 @@
 //
-//  PromoTableViewController.swift
-//  Zoom
+//  SocialMediaTableViewController.swift
+//  Zoom	
 //
-//  Created by Matthew Redenius on 9/25/17.
+//  Created by Matthew Redenius on 10/9/17.
 //  Copyright © 2017 Matt Redenius. All rights reserved.
 //
 
 import UIKit
-import Kingfisher
-class PromoTableViewController: UITableViewController {
 
-    var promoList: Promos?
-    var storeList: Stores?
-    var companyInfo: Company?
-    
+class SocialMediaTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        promoList?.printPromos()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -33,32 +32,16 @@ class PromoTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (promoList?.promoList?.count)!
+        return 4
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "PromoListTableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! PromoListTableViewCell
-        
-        let currentPromo = promoList?.promoList?[indexPath.row]
-        cell.promoDescription.text = currentPromo?.name
-        let url = URL(string: (currentPromo?.previewImg)!)
-        cell.promoPreviewImage.kf.setImage(with: url)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PromoToPromoDisplay" {
-            let secondController = segue.destination as! PromoDisplayViewController
-            let selectedIndex = tableView.indexPathForSelectedRow?.row
-            let currentPromo = promoList?.promoList?[selectedIndex!]
-            
-            secondController.imageURL = URL(string: (currentPromo?.imgName)!)
-            secondController.promoDescriptionText = currentPromo?.description
-            secondController.storeList = storeList
-            secondController.companyInfo = companyInfo
-        }
     }
  
 

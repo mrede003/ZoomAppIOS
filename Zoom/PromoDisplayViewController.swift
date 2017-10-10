@@ -47,6 +47,15 @@ class PromoDisplayViewController: UIViewController {
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PromoToLocations" {
+            let secondController = segue.destination as! LocationTableViewController
+            
+            secondController.companyInfo = companyInfo
+            secondController.storeList = storeList
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

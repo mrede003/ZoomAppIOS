@@ -14,9 +14,7 @@ class MainViewController: UIViewController {
     var promoList: Promos?
     var storeList: Stores?
     
-    @IBAction func promoButton(_ sender: Any) {
-        //performSegue(withIdentifier: "MainToPromoTableSeque", sender: self)
-    }
+    @IBAction func promoButton(_ sender: Any) {} //Deleting this breaks the promobutton. Too lazy to figure out why.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +49,14 @@ class MainViewController: UIViewController {
             let secondController = segue.destination as! PromoTableViewController
             secondController.promoList = self.promoList
             secondController.storeList = self.storeList
+            secondController.companyInfo = self.companyObj
         } else if segue.identifier == "MaintoLocations" {
             
             let secondController = segue.destination as! LocationTableViewController
             secondController.companyInfo = self.companyObj
             secondController.storeList = self.storeList
-            print("Code made it through the segue")
+        } else if segue.identifier == "MainToSocialMedia" {
+            
         }
         
     }
