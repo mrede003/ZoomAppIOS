@@ -56,7 +56,8 @@ class MainViewController: UIViewController {
             secondController.companyInfo = self.companyObj
             secondController.storeList = self.storeList
         } else if segue.identifier == "MainToSocialMedia" {
-            
+            let secondController = segue.destination as! SocialMediaTableViewController
+            secondController.companyInfo = self.companyObj
         }
         
     }

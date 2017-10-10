@@ -44,7 +44,7 @@ class LocationViewController: UIViewController {
 
         TopUIView.addBorder(edges: [.left, .top, .bottom, .right], color: UIColor.black, thickness: 2)
         MiddleUIView.addBorder(edges: [.left, .top, .bottom, .right], color: UIColor.black, thickness: 2)
-        BottomUIView.addBorder(edges: [.left, .top, .bottom, .right], color: UIColor.black, thickness: 2)
+        BottomUIView.addBorder(edges: [.left, .top, .bottom, .right], color: UIColor.black, thickness: 2)	
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

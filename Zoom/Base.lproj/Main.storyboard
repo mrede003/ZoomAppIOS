@@ -240,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jix-fs-SQ9" customClass="SocialMediaTableViewCell" customModule="Zoom" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SocialMediaTableViewCell" id="jix-fs-SQ9" customClass="SocialMediaTableViewCell" customModule="Zoom" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jix-fs-SQ9" id="JzJ-3W-vQy">
@@ -279,6 +279,11 @@
                                         <constraint firstItem="EiH-c0-Oe9" firstAttribute="top" secondItem="Sgo-Yq-8r7" secondAttribute="bottom" constant="5" id="x3H-1d-699"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="body" destination="EiH-c0-Oe9" id="0dE-dz-CAM"/>
+                                    <outlet property="icon" destination="zMX-6Z-mDF" id="DDA-Zn-2j8"/>
+                                    <outlet property="title" destination="Sgo-Yq-8r7" id="eWm-oU-dIC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

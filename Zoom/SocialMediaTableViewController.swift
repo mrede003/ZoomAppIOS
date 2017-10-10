@@ -1,6 +1,6 @@
 //
 //  SocialMediaTableViewController.swift
-//  Zoom	
+//  Zoom
 //
 //  Created by Matthew Redenius on 10/9/17.
 //  Copyright © 2017 Matt Redenius. All rights reserved.
@@ -10,6 +10,12 @@ import UIKit
 
 class SocialMediaTableViewController: UITableViewController {
 
+    var companyInfo : Company?
+    let facebook = 0
+    let twitter = 1
+    let google_plus = 2
+    let instagram = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,10 +43,27 @@ class SocialMediaTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cellIdentifier = "SocialMediaTableViewCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! SocialMediaTableViewCell
+        
+        switch indexPath.row {
+        case facebook:
+            cell.icon.image = #imageLiteral(resourceName: "facebook")
+        case twitter:
+            cell.icon.image = #imageLiteral(resourceName: "twitter")
+            cell.title.text = "Twitter"
+            cell.body.text = "Tweet us your experience, bad or good, we embrace our customers feedback!"
+        case google_plus:
+            cell.icon.image = #imageLiteral(resourceName: "googleplus")
+            cell.title.text = "Google Plus"
+            cell.body.text = "Join our circle and become a part of the Zoom Family. Drop a review and let us know how we're doing!"
+        case instagram:
+            cell.icon.image = #imageLiteral(resourceName: "instagram")
+            cell.title.text = "Instagram"
+            cell.body.text = "Take a photo and share! We love seeing picture of our satisfied customers!"
+        default:
+            break
+        }
         return cell
     }
  

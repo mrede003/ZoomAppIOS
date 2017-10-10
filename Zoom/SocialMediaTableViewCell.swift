@@ -10,6 +10,9 @@ import UIKit
 
 class SocialMediaTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var body: UILabel!
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var title: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
