@@ -19,7 +19,7 @@ class PromoDisplayViewController: UIViewController {
     var imageURL: URL?
     var promoDescriptionText: String?
     var storeList: Stores?
-    var companyInfo: Company?
+    var companyObj: Company?
     
     
     override func viewDidLoad() {
@@ -51,7 +51,7 @@ class PromoDisplayViewController: UIViewController {
         if segue.identifier == "PromoToLocations" {
             let secondController = segue.destination as! LocationTableViewController
             
-            secondController.companyInfo = companyInfo
+            secondController.companyObj = companyObj
             secondController.storeList = storeList
         }
     }

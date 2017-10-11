@@ -12,7 +12,7 @@ class PromoTableViewController: UITableViewController {
 
     var promoList: Promos?
     var storeList: Stores?
-    var companyInfo: Company?
+    var companyObj: Company?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class PromoTableViewController: UITableViewController {
             secondController.imageURL = URL(string: (currentPromo?.imgName)!)
             secondController.promoDescriptionText = currentPromo?.description
             secondController.storeList = storeList
-            secondController.companyInfo = companyInfo
+            secondController.companyObj = companyObj
         }
     }
  

@@ -10,7 +10,7 @@ import UIKit
 
 class SocialMediaTableViewController: UITableViewController {
 
-    var companyInfo : Company?
+    var companyObj : Company?
     let facebook = 0
     let twitter = 1
     let google_plus = 2
@@ -65,6 +65,21 @@ class SocialMediaTableViewController: UITableViewController {
             break
         }
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch tableView.indexPathForSelectedRow!.row {
+        case facebook:
+            break
+        case twitter:
+            break
+        case google_plus:
+            break
+        case instagram:
+            break
+        default:
+            break
+        }
     }
  
 

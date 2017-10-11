@@ -11,7 +11,7 @@ import UIKit
 class LocationTableViewController: UITableViewController {
 
     var storeList: Stores?
-    var companyInfo: Company?
+    var companyObj: Company?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +58,8 @@ class LocationTableViewController: UITableViewController {
             secondController.storeBioText = currentStore?.bio
             secondController.storeAddressText = currentStore?.address
             secondController.title = currentStore?.name
+            secondController.store = currentStore
+            secondController.companyObj = companyObj
         }
     }
 

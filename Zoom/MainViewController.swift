@@ -14,7 +14,10 @@ class MainViewController: UIViewController {
     var promoList: Promos?
     var storeList: Stores?
     
-    @IBAction func promoButton(_ sender: Any) {} //Deleting this breaks the promobutton. Too lazy to figure out why.
+
+    @IBAction func openWebpageButton(_ sender: UIButton) {
+        UIApplication.shared.openURL(URL(string: (companyObj?.website_url)!)!)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,15 +52,24 @@ class MainViewController: UIViewController {
             let secondController = segue.destination as! PromoTableViewController
             secondController.promoList = self.promoList
             secondController.storeList = self.storeList
-            secondController.companyInfo = self.companyObj
+            secondController.companyObj = self.companyObj
+            
         } else if segue.identifier == "MaintoLocations" {
             
             let secondController = segue.destination as! LocationTableViewController
-            secondController.companyInfo = self.companyObj
+            secondController.companyObj = self.companyObj
             secondController.storeList = self.storeList
+            
         } else if segue.identifier == "MainToSocialMedia" {
+            
             let secondController = segue.destination as! SocialMediaTableViewController
-            secondController.companyInfo = self.companyObj
+            secondController.companyObj = self.companyObj
+            
+        } else if segue.identifier == "MainToAppointment" {
+            
+            let secondController = segue.destination as! AppointmentController
+            secondController.companyObj = self.companyObj
+            
         }
         
     }

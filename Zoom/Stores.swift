@@ -44,7 +44,7 @@ class Stores {
             self.bio = storeInfo["bio"] as? String ?? "Store Biography"
             self.storeImgPre = storeInfo["storeImgPre"] as? String ?? "www.imgur.com"
             self.phoneNumber = storeInfo["phoneNumber"] as? String ?? "0000000000"
-            self.googleRateLink = storeInfo["storeIngo"] as? String ?? "www.google.com"
+            self.googleRateLink = storeInfo["googleRateLink"] as? String ?? "www.google.com"
             self.latitude = storeInfo["latitude"] as? Double ?? 0.0
             self.longitude = storeInfo["longitude"] as? Double ?? 0.0
             self.milesAway = 100.0

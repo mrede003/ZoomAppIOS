@@ -73,7 +73,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="67.5"/>
                                                 <state key="normal" image="promos"/>
                                                 <connections>
-                                                    <action selector="promoButton:" destination="AaR-W8-2zY" eventType="touchUpInside" id="BEf-0a-VVz"/>
                                                     <segue destination="nqJ-ly-Yew" kind="show" identifier="MainToPromoTableSeque" id="R9e-2o-bgJ"/>
                                                 </connections>
                                             </button>
@@ -81,7 +80,7 @@
                                                 <rect key="frame" x="65" y="0.0" width="60" height="67.5"/>
                                                 <state key="normal" image="appointment"/>
                                                 <connections>
-                                                    <segue destination="WG7-Ar-eHb" kind="show" id="o11-Kt-sPa"/>
+                                                    <segue destination="WG7-Ar-eHb" kind="show" identifier="MainToAppointment" id="o11-Kt-sPa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrJ-qg-fhI">
@@ -101,6 +100,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voH-Yf-xlL">
                                                 <rect key="frame" x="260" y="0.0" width="60" height="67.5"/>
                                                 <state key="normal" image="website"/>
+                                                <connections>
+                                                    <action selector="openWebpageButton:" destination="AaR-W8-2zY" eventType="touchUpInside" id="oFs-e9-UEo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20986035466194153" green="0.23283591866493225" blue="0.23269641399383545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -770,14 +772,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBb-5e-nth">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="72.5"/>
                                                 <state key="normal" image="phone"/>
+                                                <connections>
+                                                    <action selector="callStore:" destination="5ci-Pk-Lwe" eventType="touchUpInside" id="UyC-69-IGh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGm-xu-13N">
                                                 <rect key="frame" x="85" y="0.0" width="70" height="72.5"/>
                                                 <state key="normal" image="rate_us"/>
+                                                <connections>
+                                                    <action selector="openRatingLink:" destination="5ci-Pk-Lwe" eventType="touchUpInside" id="Hfd-nX-OEp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bd-sn-mbD">
                                                 <rect key="frame" x="170" y="0.0" width="70" height="72.5"/>
                                                 <state key="normal" image="navigate"/>
+                                                <connections>
+                                                    <action selector="navigateToStore:" destination="5ci-Pk-Lwe" eventType="touchUpInside" id="R2u-cu-1K3"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1008,10 +1019,10 @@
             </objects>
             <point key="canvasLocation" x="1928" y="-105"/>
         </scene>
-        <!--View Controller-->
+        <!--Appointment Controller-->
         <scene sceneID="kC8-A6-3B4">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="WG7-Ar-eHb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppointmentController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WG7-Ar-eHb" customClass="AppointmentController" customModule="Zoom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xwO-Ke-2up"/>
                         <viewControllerLayoutGuide type="bottom" id="QpL-hz-zGZ"/>
@@ -1333,11 +1344,11 @@
         <image name="zoom_logo" width="161" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dhZ-Rr-y8h"/>
-        <segue reference="blt-6V-f3p"/>
-        <segue reference="R9e-2o-bgJ"/>
+        <segue reference="Xr7-mq-orO"/>
         <segue reference="TWQ-NC-p3D"/>
+        <segue reference="R9e-2o-bgJ"/>
         <segue reference="o11-Kt-sPa"/>
+        <segue reference="blt-6V-f3p"/>
         <segue reference="waf-Zt-K5J"/>
     </inferredMetricsTieBreakers>
 </document>

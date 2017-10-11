@@ -10,6 +10,8 @@ import UIKit
 
 class AppointmentController: UIViewController {
 
+    var companyObj: Company?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
