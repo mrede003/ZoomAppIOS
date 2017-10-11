@@ -32,5 +32,12 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>instagram</string>
+        <string>fb</string>
+        <string>twitter</string>
+        <string>gplus</string>
+    </array>
 </dict>
 </plist>

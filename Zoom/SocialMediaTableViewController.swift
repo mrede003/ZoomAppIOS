@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SocialMediaTableViewController: UITableViewController {
+class SocialMediaTableViewController: UITableViewController{
 
     var companyObj : Company?
     let facebook = 0
@@ -41,7 +41,84 @@ class SocialMediaTableViewController: UITableViewController {
         return 4
     }
 
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)")
+        switch tableView.indexPathForSelectedRow!.row {
+        case facebook:
+      
+            //Sadly facebook doesn't have an officially support url scheme. Can't link directly to the app at this time. 10/10/2017
+            UIApplication.shared.openURL(URL(string: (companyObj?.facebook_url)!)!)
+            break
+        case twitter:
+            let Username =  companyObj?.twitter_username
+            let appURL = URL(string: "twitter://user?screen_name=\(Username!)")!
+            let webURL = URL(string: "https://twitter.com/\(Username!)")!
+            let application = UIApplication.shared
+            
+            if application.canOpenURL(appURL as URL) {
+                if #available(iOS 10.0, *) {
+                    application.open(appURL as URL)
+                } else {
+                    UIApplication.shared.openURL(appURL)
+                }
+            } else {
+                // if Instagram app is not installed, open URL inside Safari
+                if #available(iOS 10.0, *) {
+                    application.open(webURL as URL)
+                } else {
+                    UIApplication.shared.openURL(webURL)
+                }
+            }
+            break
+        case google_plus:
+            let Username =  companyObj?.google_plus_id
+            let appURL = URL(string: "gplus://plus.google.com/\(Username!)")!
+            let webURL = URL(string: "https://plus.google.com/\(Username!)")!
+            let application = UIApplication.shared
+            
+            if application.canOpenURL(appURL as URL) {
+                if #available(iOS 10.0, *) {
+                    application.open(appURL as URL)
+                } else {
+                    UIApplication.shared.openURL(appURL)
+                }
+            } else {
+                // if Instagram app is not installed, open URL inside Safari
+                if #available(iOS 10.0, *) {
+                    application.open(webURL as URL)
+                } else {
+                    UIApplication.shared.openURL(webURL)
+                }
+            }
+            break
+        case instagram:
+            let Username =  companyObj?.insta_id
+            let appURL = URL(string: "instagram://user?username=\(Username!)")!
+            let webURL = URL(string: "https://instagram.com/\(Username!)")!
+            let application = UIApplication.shared
+            
+            if application.canOpenURL(appURL as URL) {
+                if #available(iOS 10.0, *) {
+                    application.open(appURL as URL)
+                } else {
+                    UIApplication.shared.openURL(appURL)
+                }
+            } else {
+                // if Instagram app is not installed, open URL inside Safari
+                if #available(iOS 10.0, *) {
+                    application.open(webURL as URL)
+                } else {
+                    UIApplication.shared.openURL(webURL)
+                }
+            }
+            break
+        default:
+            break
+            
+        }
+        tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "SocialMediaTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! SocialMediaTableViewCell
@@ -65,21 +142,6 @@ class SocialMediaTableViewController: UITableViewController {
             break
         }
         return cell
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch tableView.indexPathForSelectedRow!.row {
-        case facebook:
-            break
-        case twitter:
-            break
-        case google_plus:
-            break
-        case instagram:
-            break
-        default:
-            break
-        }
     }
  
 
