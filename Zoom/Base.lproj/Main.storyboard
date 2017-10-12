@@ -246,7 +246,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jix-fs-SQ9" id="JzJ-3W-vQy">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zMX-6Z-mDF">
@@ -1067,7 +1067,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Last Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BoH-Xp-Mli">
                                         <rect key="frame" x="184.5" y="146.5" width="127.5" height="30"/>
@@ -1221,6 +1221,9 @@
                                         <state key="normal" title="Request Appointment">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="requestAppointmentButton:" destination="WG7-Ar-eHb" eventType="touchUpInside" id="Rlj-zP-8g3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1318,6 +1321,19 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <connections>
+                        <outlet property="areaCodeNumber" destination="p9w-Qe-MUv" id="MNf-Ek-Gne"/>
+                        <outlet property="datePicker" destination="a5F-sb-yhn" id="Gtx-Jf-6De"/>
+                        <outlet property="descriptionForVisit" destination="XaA-y7-s6U" id="xTU-ei-adq"/>
+                        <outlet property="firstName" destination="Lfu-9w-57l" id="EcS-IW-0RU"/>
+                        <outlet property="lastName" destination="BoH-Xp-Mli" id="wLl-ZW-1L4"/>
+                        <outlet property="lastNumber" destination="w4O-Tg-8qr" id="aL8-hl-0Vq"/>
+                        <outlet property="locationPicker" destination="ym4-B6-pto" id="7yL-ri-kpX"/>
+                        <outlet property="middleNumber" destination="2Dv-2B-wZ0" id="atD-a4-Ljl"/>
+                        <outlet property="repPicker" destination="c7e-8s-36k" id="AxK-5a-V2u"/>
+                        <outlet property="scrollView" destination="321-eG-cAB" id="Fcu-1C-eoN"/>
+                        <outlet property="timePicker" destination="i7k-ED-dOa" id="Pfo-gE-HrP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LiY-0e-dZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
