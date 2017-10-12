@@ -27,11 +27,13 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Toast-Swift (2.0.0)
 
 DEPENDENCIES:
   - Firebase
   - Firebase/Database
   - Kingfisher (~> 4.0)
+  - Toast-Swift (~> 2.0.0)
 
 SPEC CHECKSUMS:
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
@@ -42,7 +44,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
 
-PODFILE CHECKSUM: a338e04e12449781f8b211826b764e37ef3f434e
+PODFILE CHECKSUM: 8988cf34ebea406db66422f812db816162d5c4e4
 
 COCOAPODS: 1.2.1

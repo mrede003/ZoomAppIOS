@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Toast-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +37,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>16C7434154EBBD1FC5FF0528249C0FD0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6F712943B3C5592E82604940D11CE08A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7EB2F0F7716FA70821E42B33120935C</key>
+		<key>E0D84D8131913B66C794D9FE1A90FD2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -69,6 +69,7 @@ class MainViewController: UIViewController {
             
             let secondController = segue.destination as! AppointmentController
             secondController.companyObj = self.companyObj
+            secondController.storeList = self.storeList
             
         }
         

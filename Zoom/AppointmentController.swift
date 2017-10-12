@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class AppointmentController: UIViewController {
 
     var companyObj: Company?
+    var storeList: Stores?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.view.makeToast("This is a piece of toast", duration: 3.0, position: .center)
 
         // Do any additional setup after loading the view.
     }
