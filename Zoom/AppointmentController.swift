@@ -9,10 +9,12 @@
 import UIKit
 import Toast_Swift
 
-class AppointmentController: UIViewController {
+class AppointmentController: UIViewController, UITextViewDelegate {
 
     var companyObj: Company?
     var storeList: Stores?
+    
+    let placeholderText = "Please give a brief description of the reason for you appointment....."
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -26,13 +28,15 @@ class AppointmentController: UIViewController {
     @IBOutlet weak var descriptionForVisit: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    
     @IBAction func requestAppointmentButton(_ sender: UIButton) {
-        
+        if(canRequest()) {
+            self.view.makeToast("Making appointment", duration: 3.0, position: .center)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.makeToast("This is a piece of toast", duration: 3.0, position: .center)
         
         //Set Observers to watch for keyboard appearence
         registerKeyboardNotifications()
@@ -40,14 +44,24 @@ class AppointmentController: UIViewController {
         //Add Gesture Recognizer to hide keyboard when a tap is made outside of a textview
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
-
+        //Set up placeholder text in description text view
+        descriptionForVisit.delegate = self
+        descriptionForVisit.text = placeholderText
+        descriptionForVisit.textColor = UIColor.lightGray
         
-    }
+        //Set Pickers to appropriate textFields
+        setUpDatePicker()
+        
+        
 
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: Helper functions
     
     func sendEmail(message : String) {
         
@@ -80,6 +94,92 @@ class AppointmentController: UIViewController {
     func keyboardWillHide(notification: NSNotification) {
         scrollView.contentInset = .zero
         scrollView.scrollIndicatorInsets = .zero
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        //Remove placeholder text so user can edit
+        if descriptionForVisit.textColor == UIColor.lightGray {
+            descriptionForVisit.text = ""
+            descriptionForVisit.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        //Add placeholder text if the field is empty
+        if descriptionForVisit.text == "" {
+            descriptionForVisit.text = placeholderText
+            descriptionForVisit.textColor = UIColor.lightGray
+        }
+    }
+    
+    func setUpDatePicker() {
+        //init date picker and at it to date text field
+        let datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        datePickerView.addTarget(self, action:  #selector(datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        
+        datePicker.inputView = datePickerView
+        
+        
+    }
+    
+    func datePickerValueChanged(sender: UIDatePicker) {
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        datePicker.text = formatter.string(from: sender.date)
+        
+    }
+    
+    //MARK: Logic functions
+    
+    //Returns true if all neccessary field are filled
+    func canRequest() -> Bool {
+        
+        //There's probably better ways to check if nil but I'm a Java programmer so give me a break
+        //Make sure
+        if(firstName.text == nil || firstName.text == "") {
+            self.view.makeToast("Please input first name!", duration: 2.0, position: .center)
+            return false
+        }
+        
+        //Make sure last name field is filled in
+        if(lastName.text == nil || lastName.text == "") {
+            self.view.makeToast("Please input last name!", duration: 2.0, position: .center)
+            return false
+        }
+        
+        //Make sure phone number fields are filled in
+        if(areaCodeNumber.text == nil || areaCodeNumber.text?.characters.count != 3
+            || middleNumber.text == nil || middleNumber.text?.characters.count != 3
+            || lastNumber.text == nil || lastNumber.text?.characters.count != 4 ) {
+            self.view.makeToast("Please 10 digit phone number!", duration: 3.0, position: .center)
+            return false
+        }
+        
+        if(firstName.text == nil || firstName.text == "") {
+            self.view.makeToast("Please input first name!", duration: 3.0, position: .center)
+            return false
+        }
+        
+        if(firstName.text == nil || firstName.text == "") {
+            self.view.makeToast("Please input first name!", duration: 3.0, position: .center)
+            return false
+        }
+        
+        if(firstName.text == nil || firstName.text == "") {
+            self.view.makeToast("Please input first name!", duration: 3.0, position: .center)
+            return false
+        }
+        
+        if(firstName.text == nil || firstName.text == "") {
+           self.view.makeToast("Please input first name!", duration: 3.0, position: .center)
+            return false
+        }
+        
+        return true;
     }
 
     /*
