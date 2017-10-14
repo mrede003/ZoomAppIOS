@@ -47,10 +47,10 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     @IBAction func requestAppointmentButton(_ sender: UIButton) {
         if(canRequest()) {
-            self.view.makeToast("Making appointment", duration: 3.0, position: .center)
-            print(constructEmailSubject())
-            print(constructEmailBody())
+            self.view.makeToast("Sending Appointment. One moment.....", duration: 3.0, position: .center)
             sendEmail()
+            clearAllFields()
+            self.view.makeToast("Appointment Sent. Thank you!", duration: 3.0, position: .center)
         }
     }
     
@@ -121,7 +121,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
                 if (error != nil) {
                     print("Error sending email: \(error)")
                 } else {
-                    print("Successfully sent email!")
+                    print("Email successfully sent")
                 }
             }
         }
@@ -249,6 +249,19 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
             locationPicker.text = currentStore?.address
         }
         return true
+    }
+    
+    func clearAllFields() {
+        firstName.text = ""
+        lastName.text = ""
+        areaCodeNumber.text = ""
+        lastNumber.text = ""
+        middleNumber.text = ""
+        timePicker.text = ""
+        locationPicker.text = ""
+        repPicker.text = ""
+        descriptionForVisit.text = ""
+        currentStore = nil
     }
     
     func setUpDatePicker() {
