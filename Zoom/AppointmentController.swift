@@ -26,6 +26,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
     let placeholderText = "Please give a brief description of the reason for you appointment....."
     
     let datePickerView = UIDatePicker()
+    let timePickerView = UIDatePicker()
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -64,10 +65,8 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         descriptionForVisit.textColor = UIColor.lightGray
         
         // Set Pickers to appropriate textFields
+        setUpTimePicker()
         setUpDatePicker()
-        
-        
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -135,10 +134,6 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
         if(textField == timePicker) {
-            print("This is the timepicker textview")
-            // init date picker and at it to date text field
-            let timePickerView = UIDatePicker()
-            timePickerView.datePickerMode = UIDatePickerMode.time
             
             // Set min appointment time
             var minimumTime: Date?
@@ -153,7 +148,8 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
                     // Minimum time to make an appointment is current time + 1 hour
                     timeComponent.hour = getCurrentHour() + 1
                     timeComponent.minute = getCurrentMinute()
-                    minimumTime = Calendar.current.date(byAdding: timeComponent, to: datePickerView.date)
+                    
+                    minimumTime = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: timeComponent)
                     
                 } else {
                     
@@ -165,25 +161,23 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
             } else {
                 
                 // The date is a future date, set min/max times as open/close
-                
-                if(Date().dayOfWeek() == MONDAY_SATURDAY) {
+                if(datePickerView.date.dayOfWeek() == MONDAY_SATURDAY) {
                     timeComponent.hour = minWeekdayAppointmentTime
                 } else {
-                    timeComponent.hour = minWeekdayAppointmentTime
+                    timeComponent.hour = minSundayAppointmentTime
                 }
                 timeComponent.minute = halfHourinMinutes
                 minimumTime = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: timeComponent)
             }
-
-            timePickerView.minimumDate = minimumTime
-            let calender = Calendar.current
-            let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: minimumTime!)
-            print("\(components.hour!)")
-            print("\(components.minute!)")
+            
             // Set max appointment time
-            timeComponent.hour = getLatestAppointmentTime(selectedDate: datePickerView.date)
+            timeComponent.hour = (getLatestAppointmentTime(selectedDate: datePickerView.date))
             timeComponent.minute = 0
-            timePickerView.maximumDate = Calendar.current.date(byAdding: timeComponent, to: Date())
+            let maximumTime = Calendar.current.date(from: timeComponent)
+            
+            // Set timepicker
+            timePickerView.minimumDate = minimumTime
+            timePickerView.maximumDate = maximumTime
             
             textField.inputView = timePickerView
         }
@@ -213,10 +207,17 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         datePicker.text = formatter.string(from: datePickerView.date)
     }
     
+    func setUpTimePicker() {
+        timePickerView.datePickerMode = UIDatePickerMode.time
+        timePickerView.addTarget(self, action:  #selector(timePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        timePicker.inputView = timePickerView
+    }
+    
     func getCurrentHour() -> Int {
         let date = Date()
         let calender = Calendar.current
         let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+        print(components.hour!)
         return components.hour!
     }
     
@@ -224,6 +225,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         let date = Date()
         let calender = Calendar.current
         let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+        print(components.minute!)
         return components.minute!
     }
     
@@ -261,9 +263,9 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         let calender = Calendar.current
         let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
         
-        let time1 = getLatestAppointmentTime(selectedDate: Date())
-        let time2 = components.hour
-        if(time1 > time2!) {
+        let latestAppointmentHour = getLatestAppointmentTime(selectedDate: Date())
+        let currentHour = components.hour
+        if(currentHour! + 1 < latestAppointmentHour) {
             return true
         }
         return false
@@ -354,6 +356,7 @@ extension Date {
         let SUNDAY = 1
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
+        print(dateFormatter.string(from: self).capitalized)
         switch (dateFormatter.string(from: self).capitalized) {
             case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday":
                 return MONDAY_SATURDAY
