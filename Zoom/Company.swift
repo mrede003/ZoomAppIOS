@@ -52,7 +52,7 @@ class Company {
         self.emailPort = dictionary["emailPort"] as? String ?? "587"
         self.smtpAuth = dictionary["smtpAuth"] as? Bool ?? true
         self.starttls = dictionary["starttls"] as? Bool ?? true
-        self.emailHost = dictionary["smtpAuth"] as? String ?? "smtp.gmail.com"
+        self.emailHost = dictionary["emailHost"] as? String ?? "smtp.gmail.com"
         self.fromEmail = dictionary["fromEmail"] as? String ?? "appointmentzoomva@gmail.com"
         self.fromPassword = dictionary["fromPassword"] as? String ?? "Zoompass123"
         self.facebook_url = dictionary["facebook_url"] as? String ?? "https://www.facebook.com/ZoomWirelssofVA"

@@ -10,4 +10,5 @@ target 'Zoom' do
     pod 'Firebase/Database'
     pod 'Kingfisher', '~> 4.0'
     pod 'Toast-Swift', '~> 2.0.0'
+    pod 'mailcore2-ios'
 end

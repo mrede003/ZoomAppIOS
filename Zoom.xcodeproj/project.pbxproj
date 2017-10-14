@@ -15,6 +15,9 @@
 		308FF8521F3A821200DE408F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FF8511F3A821200DE408F /* Company.swift */; };
 		30CA140C1F43BEAD0003E1CC /* Promos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CA140B1F43BEAD0003E1CC /* Promos.swift */; };
 		30CA140E1F43D8F10003E1CC /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CA140D1F43D8F10003E1CC /* Stores.swift */; };
+		30CFF6141F92B52D00804C42 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CFF6021F92B43000804C42 /* libMailCore-ios.a */; };
+		30CFF6161F92B53300804C42 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CFF6151F92B53300804C42 /* CFNetwork.framework */; };
+		30CFF6181F92B53A00804C42 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CFF6171F92B53A00804C42 /* Security.framework */; };
 		30D5D6C41F622EA8009B722E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5D6C31F622EA8009B722E /* MainViewController.swift */; };
 		30D5D6C61F68BA09009B722E /* PromoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5D6C51F68BA09009B722E /* PromoListTableViewCell.swift */; };
 		30DC804F1F6F73930096073C /* LocationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC804E1F6F73930096073C /* LocationTableCell.swift */; };
@@ -32,6 +35,72 @@
 		92F9C92A72B1044A44770300 /* Pods_Zoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		30CFF5FF1F92B43000804C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA537169E772200778456;
+			remoteInfo = "static mailcore2 osx";
+		};
+		30CFF6011F92B43000804C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BA2C191705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
+		};
+		30CFF6031F92B43000804C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA78C169F259200778456;
+			remoteInfo = tests;
+		};
+		30CFF6051F92B43000804C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6A81B911706840C00882C15;
+			remoteInfo = "test-ios";
+		};
+		30CFF6071F92B43000804C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BD288D170BD71100A91AC1;
+			remoteInfo = "mailcore osx";
+		};
+		30CFF6091F92B43000804C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27780C3A19CF9CD100C77E44;
+			remoteInfo = "mailcore ios";
+		};
+		30CFF60B1F92B43000804C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6B5AE0219F630B3001352A6;
+			remoteInfo = unittest;
+		};
+		30CFF60D1F92B43000804C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C600B6141A242C3F000728F1;
+			remoteInfo = unittestcpp;
+		};
+		30CFF6191F92B58C00804C42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C6BA2B091705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		300353221ECE1D52003F6125 /* Zoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		300353251ECE1D52003F6125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +112,10 @@
 		308FF8511F3A821200DE408F /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		30CA140B1F43BEAD0003E1CC /* Promos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promos.swift; sourceTree = "<group>"; };
 		30CA140D1F43D8F10003E1CC /* Stores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
+		30CFF5F31F92AF7A00804C42 /* zoom_bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zoom_bridge.h; sourceTree = "<group>"; };
+		30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../mailcore2/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
+		30CFF6151F92B53300804C42 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		30CFF6171F92B53A00804C42 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		30D5D6C31F622EA8009B722E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		30D5D6C51F68BA09009B722E /* PromoListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoListTableViewCell.swift; sourceTree = "<group>"; };
 		30DC804E1F6F73930096073C /* LocationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableCell.swift; sourceTree = "<group>"; };
@@ -67,6 +140,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CFF6181F92B53A00804C42 /* Security.framework in Frameworks */,
+				30CFF6161F92B53300804C42 /* CFNetwork.framework in Frameworks */,
+				30CFF6141F92B52D00804C42 /* libMailCore-ios.a in Frameworks */,
 				92F9C92A72B1044A44770300 /* Pods_Zoom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +153,8 @@
 		2376D78A94BA9198A0E6AC2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30CFF6171F92B53A00804C42 /* Security.framework */,
+				30CFF6151F92B53300804C42 /* CFNetwork.framework */,
 				901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */,
 			);
 			name = Frameworks;
@@ -85,6 +163,7 @@
 		300353191ECE1D52003F6125 = {
 			isa = PBXGroup;
 			children = (
+				30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */,
 				300353241ECE1D52003F6125 /* Zoom */,
 				300353231ECE1D52003F6125 /* Products */,
 				8C4CA90F8E78CB3A9DD03899 /* Pods */,
@@ -124,6 +203,7 @@
 				30DC80681F8AC9240096073C /* LocationViewController.swift */,
 				30DC806A1F8AF2E60096073C /* CustomBorderUIView.swift */,
 				30DC806D1F8C5AE00096073C /* SocialMediaTableViewController.swift */,
+				30CFF5F31F92AF7A00804C42 /* zoom_bridge.h */,
 			);
 			path = Zoom;
 			sourceTree = "<group>";
@@ -136,6 +216,21 @@
 				30CA140D1F43D8F10003E1CC /* Stores.swift */,
 			);
 			name = ModelObj;
+			sourceTree = "<group>";
+		};
+		30CFF5F51F92B42F00804C42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30CFF6001F92B43000804C42 /* libMailCore.a */,
+				30CFF6021F92B43000804C42 /* libMailCore-ios.a */,
+				30CFF6041F92B43000804C42 /* tests */,
+				30CFF6061F92B43000804C42 /* test-ios.app */,
+				30CFF6081F92B43000804C42 /* MailCore.framework */,
+				30CFF60A1F92B43000804C42 /* MailCore.framework */,
+				30CFF60C1F92B43000804C42 /* unittest.xctest */,
+				30CFF60E1F92B43000804C42 /* unittestcpp */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		8C4CA90F8E78CB3A9DD03899 /* Pods */ = {
@@ -164,6 +259,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				30CFF61A1F92B58C00804C42 /* PBXTargetDependency */,
 			);
 			name = Zoom;
 			productName = Zoom;
@@ -198,12 +294,77 @@
 			mainGroup = 300353191ECE1D52003F6125;
 			productRefGroup = 300353231ECE1D52003F6125 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 30CFF5F51F92B42F00804C42 /* Products */;
+					ProjectRef = 30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				300353211ECE1D52003F6125 /* Zoom */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		30CFF6001F92B43000804C42 /* libMailCore.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMailCore.a;
+			remoteRef = 30CFF5FF1F92B43000804C42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		30CFF6021F92B43000804C42 /* libMailCore-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMailCore-ios.a";
+			remoteRef = 30CFF6011F92B43000804C42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		30CFF6041F92B43000804C42 /* tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = tests;
+			remoteRef = 30CFF6031F92B43000804C42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		30CFF6061F92B43000804C42 /* test-ios.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "test-ios.app";
+			remoteRef = 30CFF6051F92B43000804C42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		30CFF6081F92B43000804C42 /* MailCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MailCore.framework;
+			remoteRef = 30CFF6071F92B43000804C42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		30CFF60A1F92B43000804C42 /* MailCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MailCore.framework;
+			remoteRef = 30CFF6091F92B43000804C42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		30CFF60C1F92B43000804C42 /* unittest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = unittest.xctest;
+			remoteRef = 30CFF60B1F92B43000804C42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		30CFF60E1F92B43000804C42 /* unittestcpp */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = unittestcpp;
+			remoteRef = 30CFF60D1F92B43000804C42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		300353201ECE1D52003F6125 /* Resources */ = {
@@ -294,6 +455,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30CFF61A1F92B58C00804C42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "static mailcore2 ios";
+			targetProxy = 30CFF6191F92B58C00804C42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		300353291ECE1D52003F6125 /* Main.storyboard */ = {
@@ -405,11 +574,76 @@
 			baseConfigurationReference = 3E7C75D2EB437E4AE7E25339 /* Pods-Zoom.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = AW3CR8KPBN;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/mailcore2-ios\"",
+					"\"${PODS_ROOT}/Headers/Public/mailcore2-ios/MailCore\"",
+				);
 				INFOPLIST_FILE = Zoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"MailCore-ios\"",
+					"-l\"c++\"",
+					"-l\"iconv\"",
+					"-l\"icucore\"",
+					"-l\"resolv\"",
+					"-l\"sqlite3\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseDatabase\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"FirebaseNanoPB\"",
+					"-framework",
+					"\"GoogleToolboxForMac\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"nanopb\"",
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-lc++",
+					"-lresolv",
+					"-stdlib=libc++",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrede003.zoomwireless.zoomapp.Zoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zoom/zoom_bridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -419,11 +653,76 @@
 			baseConfigurationReference = 4843952BA37944BB739A106E /* Pods-Zoom.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = AW3CR8KPBN;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/mailcore2-ios\"",
+					"\"${PODS_ROOT}/Headers/Public/mailcore2-ios/MailCore\"",
+				);
 				INFOPLIST_FILE = Zoom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"MailCore-ios\"",
+					"-l\"c++\"",
+					"-l\"iconv\"",
+					"-l\"icucore\"",
+					"-l\"resolv\"",
+					"-l\"sqlite3\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseDatabase\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"FirebaseNanoPB\"",
+					"-framework",
+					"\"GoogleToolboxForMac\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"nanopb\"",
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-lc++",
+					"-lresolv",
+					"-stdlib=libc++",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrede003.zoomwireless.zoomapp.Zoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zoom/zoom_bridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

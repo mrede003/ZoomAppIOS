@@ -50,6 +50,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
             self.view.makeToast("Making appointment", duration: 3.0, position: .center)
             print(constructEmailSubject())
             print(constructEmailBody())
+            sendEmail()
         }
     }
     
@@ -90,8 +91,40 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     //MARK: Helper functions
     
-    func sendEmail(message : String) {
-        
+    func sendEmail() {
+        var smtpSession = MCOSMTPSession()
+        smtpSession.hostname = companyObj?.emailHost
+        smtpSession.username = companyObj?.fromEmail
+        smtpSession.password = companyObj?.fromPassword
+        smtpSession.port = 587
+        smtpSession.authType = MCOAuthType.saslLogin
+        smtpSession.connectionType = MCOConnectionType.startTLS
+        smtpSession.connectionLogger = {(connectionID, type, data) in
+            if data != nil {
+                if let string = NSString(data: data!, encoding: String.Encoding.utf8.rawValue){
+                    print("Connectionlogger: \(string)")
+                }
+            }
+        }
+        var recipientEmails: [String] = (companyObj?.apptEmails)!
+        recipientEmails.append((currentStore?.email)!)
+        for toEmail in recipientEmails {
+            var builder = MCOMessageBuilder()
+            builder.header.to = [MCOAddress(displayName: "\((currentStore?.name)!) Manager", mailbox: toEmail)]
+            builder.header.from = MCOAddress(displayName: "Appointments", mailbox: companyObj?.fromEmail)
+            builder.header.subject = constructEmailSubject()
+            builder.textBody = constructEmailBody()
+            
+            let rfc822Data = builder.data()
+            let sendOperation = smtpSession.sendOperation(with: rfc822Data)
+            sendOperation?.start { (error) -> Void in
+                if (error != nil) {
+                    print("Error sending email: \(error)")
+                } else {
+                    print("Successfully sent email!")
+                }
+            }
+        }
     }
     
     func registerKeyboardNotifications() {

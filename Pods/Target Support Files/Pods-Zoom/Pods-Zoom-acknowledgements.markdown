@@ -276,6 +276,10 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+## mailcore2-ios
+
+<html><body>You are being <a href="https://raw.githubusercontent.com/MailCore/mailcore2/master/LICENSE">redirected</a>.</body></html>
+
 ## nanopb
 
 Copyright (c) 2011 Petteri Aimonen <jpa at nanopb.mail.kapsi.fi>
