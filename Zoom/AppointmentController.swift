@@ -64,6 +64,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         descriptionForVisit.delegate = self
         timePicker.delegate = self
         repPicker.delegate = self
+        locationPicker.delegate = self
         
         // Set up placeholder text in description text view
         descriptionForVisit.text = placeholderText
@@ -187,17 +188,30 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
             let maximumTime = Calendar.current.date(from: timeComponent)
             
             // Set timepicker
-            timePickerView.minimumDate = minimumTime
             timePickerView.maximumDate = maximumTime
+            timePickerView.minimumDate = minimumTime
+            
+            // Default to earliest value available
+            timePickerView.date = minimumTime!
             
             textField.inputView = timePickerView
+            timePickerValueChanged(sender: timePickerView)
         } else if(textField == repPicker) {
             
             if(currentStore == nil) {
                 self.view.makeToast("Please choose a store first!", duration: 3.0, position: .center)
                 return false
+            } else {
+                
+                // Default value when cell is clicked
+                repPicker.text = currentStore?.staff?[repPickerView.selectedRow(inComponent: 0)]
             }
             
+        } else if(textField == locationPicker) {
+            
+            // Default value when cell is clicked
+            currentStore = storeList?.storeList?[locationPickerView.selectedRow(inComponent: 0)]
+            locationPicker.text = currentStore?.address
         }
         return true
     }
@@ -374,10 +388,37 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
             
             locationPicker.text = storeList?.storeList?[row].address
             currentStore = storeList?.storeList?[row]
+            repPicker.text = ""
         } else if(pickerView == repPickerView) {
             
             repPicker.text = currentStore?.staff?[row]
         }
+    }
+    
+    /*
+    func constructEmailBody() -> String {
+        let emailBody="Hello \(currentStore?.managerName)",\n" +
+            "\n" +
+            "\tAn appointment at your store location "+selectedStore+" has been\n" +
+            "requested. Please call the customer ASAP to confirm or deny their request.\n" +
+            "\n" +
+            "NAME: "+firstNameView.getText().toString()+" "+lastNameView.getText().toString()+"\n" +
+            "MTN: "+firstPhoneView.getText().toString()+middlePhoneView.getText().toString()+lastPhoneView.getText().toString()+"\n" +
+            "Requested Rep: "+selectedRep+"\n" +
+            "Requested Date: "+dateView.getText().toString()+"\n" +
+            "Requested Time: "+timeView.getText().toString()+"\n" +
+           "Reason: "+textArea.getText().toString()+"\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "---------------------------------------------------------------------------- \n" +
+        "This is an automated message sent by the Zoom Wireless App (TM).";
+        return "test"
+    }*/
+    
+    func constructEmailSubject() -> String {
+        return "AUTOMATED: Requested Appointment with \(firstName.text!) \(lastName.text!) via the ZOOMApp"
     }
 
     /*
