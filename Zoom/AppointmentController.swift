@@ -10,7 +10,7 @@ import UIKit
 import Toast_Swift
 
 class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     var companyObj: Company?
     var storeList: Stores?
     var currentStore: Stores.Store?
@@ -287,7 +287,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         //return selectedDate == Date()
     }
     
-    // This function operates under the assumption that the date 
+    // This function operates under the assumption that the date
     // in question is today's date
     func timeForAppointmentsIsLeft() -> Bool {
         let date = Date()
@@ -343,7 +343,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
         
         if(datePicker.text == nil || datePicker.text == "") {
-           self.view.makeToast("Please input a date for appointment!", duration: 3.0, position: .center)
+            self.view.makeToast("Please input a date for appointment!", duration: 3.0, position: .center)
             return false
         }
         
@@ -423,17 +423,17 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
     func constructEmailSubject() -> String {
         return "AUTOMATED: Requested Appointment with \(firstName.text!) \(lastName.text!) via the ZOOMApp"
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 // Extends Date to return if day of the week is or is not a sunday
@@ -445,10 +445,10 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         switch (dateFormatter.string(from: self).capitalized) {
-            case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday":
-                return MONDAY_SATURDAY
-            default :
-                return SUNDAY
+        case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday":
+            return MONDAY_SATURDAY
+        default :
+            return SUNDAY
         }
     }
 }
