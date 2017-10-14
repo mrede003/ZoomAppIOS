@@ -13,6 +13,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
 
     var companyObj: Company?
     var storeList: Stores?
+    var currentStore: Stores.Store?
     
     let MONDAY_SATURDAY = 0
     
@@ -62,6 +63,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         // Set Delagates
         descriptionForVisit.delegate = self
         timePicker.delegate = self
+        repPicker.delegate = self
         
         // Set up placeholder text in description text view
         descriptionForVisit.text = placeholderText
@@ -75,6 +77,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         locationPicker.inputView = locationPickerView
         locationPickerView.delegate = self
         repPicker.inputView = repPickerView
+        repPickerView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -188,6 +191,13 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
             timePickerView.maximumDate = maximumTime
             
             textField.inputView = timePickerView
+        } else if(textField == repPicker) {
+            
+            if(currentStore == nil) {
+                self.view.makeToast("Please choose a store first!", duration: 3.0, position: .center)
+                return false
+            }
+            
         }
         return true
     }
@@ -225,7 +235,6 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         let date = Date()
         let calender = Calendar.current
         let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
-        print(components.hour!)
         return components.hour!
     }
     
@@ -233,7 +242,6 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         let date = Date()
         let calender = Calendar.current
         let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
-        print(components.minute!)
         return components.minute!
     }
     
@@ -256,7 +264,6 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         if(components.year == selectedComponents.year
             && components.month == selectedComponents.month
             && components.day == selectedComponents.day) {
-            print("The date is today")
             return true
         }
         return false
@@ -319,26 +326,25 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
             return false
         }
         
-        if(firstName.text == nil || firstName.text == "") {
-            self.view.makeToast("Please input first name!", duration: 3.0, position: .center)
+        if(datePicker.text == nil || datePicker.text == "") {
+           self.view.makeToast("Please input a date for appointment!", duration: 3.0, position: .center)
             return false
         }
         
-        if(firstName.text == nil || firstName.text == "") {
-            self.view.makeToast("Please input first name!", duration: 3.0, position: .center)
+        if(timePicker.text == nil || timePicker.text == "") {
+            self.view.makeToast("Please input a time for appointment!", duration: 3.0, position: .center)
             return false
         }
         
-        if(firstName.text == nil || firstName.text == "") {
-            self.view.makeToast("Please input first name!", duration: 3.0, position: .center)
+        if(locationPicker.text == nil || locationPicker.text == "") {
+            self.view.makeToast("Please choose a desired store!", duration: 3.0, position: .center)
             return false
         }
         
-        if(firstName.text == nil || firstName.text == "") {
-           self.view.makeToast("Please input first name!", duration: 3.0, position: .center)
+        if(repPicker.text == nil || repPicker.text == "") {
+            self.view.makeToast("Please chooser your desired representative!", duration: 3.0, position: .center)
             return false
         }
-        
         return true;
     }
     
@@ -351,7 +357,7 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         if(pickerView == locationPickerView) {
             return (storeList?.storeList?.count)!
         } else {
-            return 1
+            return (currentStore?.staff?.count)!
         }
     }
     
@@ -359,15 +365,18 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         if(pickerView == locationPickerView) {
             return storeList?.storeList?[row].name
         } else {
-            return "test"
+            return currentStore?.staff?[row]
         }
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(pickerView == locationPickerView) {
-            locationPicker.text = storeList?.storeList?[row].name
+            
+            locationPicker.text = storeList?.storeList?[row].address
+            currentStore = storeList?.storeList?[row]
         } else if(pickerView == repPickerView) {
             
+            repPicker.text = currentStore?.staff?[row]
         }
     }
 
@@ -391,7 +400,6 @@ extension Date {
         let SUNDAY = 1
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
-        print(dateFormatter.string(from: self).capitalized)
         switch (dateFormatter.string(from: self).capitalized) {
             case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday":
                 return MONDAY_SATURDAY
