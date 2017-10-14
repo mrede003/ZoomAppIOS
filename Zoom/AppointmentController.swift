@@ -9,7 +9,7 @@
 import UIKit
 import Toast_Swift
 
-class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var companyObj: Company?
     var storeList: Stores?
@@ -27,6 +27,9 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     let datePickerView = UIDatePicker()
     let timePickerView = UIDatePicker()
+    let locationPickerView = UIPickerView()
+    let repPickerView = UIPickerView()
+    
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -67,6 +70,11 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         // Set Pickers to appropriate textFields
         setUpTimePicker()
         setUpDatePicker()
+        
+        // Set Pickers for location/employees
+        locationPicker.inputView = locationPickerView
+        locationPickerView.delegate = self
+        repPicker.inputView = repPickerView
     }
     
     override func didReceiveMemoryWarning() {
@@ -334,7 +342,34 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         return true;
     }
     
-
+    // MARK: Picker method implementations
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if(pickerView == locationPickerView) {
+            return (storeList?.storeList?.count)!
+        } else {
+            return 1
+        }
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if(pickerView == locationPickerView) {
+            return storeList?.storeList?[row].name
+        } else {
+            return "test"
+        }
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(pickerView == locationPickerView) {
+            locationPicker.text = storeList?.storeList?[row].name
+        } else if(pickerView == repPickerView) {
+            
+        }
+    }
 
     /*
     // MARK: - Navigation
