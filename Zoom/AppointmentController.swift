@@ -48,6 +48,8 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBAction func requestAppointmentButton(_ sender: UIButton) {
         if(canRequest()) {
             self.view.makeToast("Making appointment", duration: 3.0, position: .center)
+            print(constructEmailSubject())
+            print(constructEmailBody())
         }
     }
     
@@ -395,27 +397,28 @@ class AppointmentController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
     }
     
-    /*
+    // Helper method to construct email body
+    //
     func constructEmailBody() -> String {
-        let emailBody="Hello \(currentStore?.managerName)",\n" +
-            "\n" +
-            "\tAn appointment at your store location "+selectedStore+" has been\n" +
-            "requested. Please call the customer ASAP to confirm or deny their request.\n" +
-            "\n" +
-            "NAME: "+firstNameView.getText().toString()+" "+lastNameView.getText().toString()+"\n" +
-            "MTN: "+firstPhoneView.getText().toString()+middlePhoneView.getText().toString()+lastPhoneView.getText().toString()+"\n" +
-            "Requested Rep: "+selectedRep+"\n" +
-            "Requested Date: "+dateView.getText().toString()+"\n" +
-            "Requested Time: "+timeView.getText().toString()+"\n" +
-           "Reason: "+textArea.getText().toString()+"\n" +
-            "\n" +
-            "\n" +
-            "\n" +
-            "\n" +
-            "---------------------------------------------------------------------------- \n" +
-        "This is an automated message sent by the Zoom Wireless App (TM).";
-        return "test"
-    }*/
+        let lineZero="Hello \((currentStore?.managerName)!),\n\n"
+        let lineOne = "\tAn appointment at your store location \((currentStore?.name)!) has been\n"
+        let lineTwo = "requested. Please call the customer ASAP to confirm or deny their request.\n\n"
+        let lineThree = "NAME: \(firstName.text!) \(lastName.text!) \n"
+        let lineFour = "MTN: \(areaCodeNumber.text!) \(middleNumber.text!) \(lastNumber.text!)\n"
+        let lineFive = "Requested Rep: \(repPicker.text!)\n"
+        let lineSix = "Requested Date: \(datePicker.text!)\n"
+        let lineSeven = "Requested Time: \(timePicker.text!)\n"
+        var descriptionText: String
+        if(descriptionForVisit.text! == placeholderText) {
+            descriptionText = ""
+        } else {
+            descriptionText = descriptionForVisit.text!
+        }
+        let lineEight = "Reason: \(descriptionText)\n\n\n\n\n"
+        let lineNine = "---------------------------------------------------------------------------- \n"
+        let lineTen = "This is an automated message sent by the Zoom Wireless App (TM)."
+        return "\(lineZero)\(lineOne)\(lineTwo)\(lineThree)\(lineFour)\(lineFive)\(lineSix)\(lineSeven)\(lineEight)\(lineNine)\(lineTen)"
+    }
     
     func constructEmailSubject() -> String {
         return "AUTOMATED: Requested Appointment with \(firstName.text!) \(lastName.text!) via the ZOOMApp"
