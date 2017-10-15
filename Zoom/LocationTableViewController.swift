@@ -45,6 +45,8 @@ class LocationTableViewController: UITableViewController {
         cell.storeAddressLabel.text = currentStore?.address
         let url = URL(string: (currentStore?.storeImgPre)!)
         cell.locationImage.kf.setImage(with: url)
+        var formattedDistance = NSString(format: "%.2f", (currentStore?.milesAway)!)
+        cell.milesAwayLabel.text = "\(formattedDistance) miles"
         return cell
     }
     

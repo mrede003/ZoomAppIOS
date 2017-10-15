@@ -32,7 +32,8 @@ class Stores {
     class Store {
         public private(set) var staff: [String]?
         public private(set) var email, address, name, storeImg, bio, storeImgPre, phoneNumber, googleRateLink, managerName : String?
-        public private(set) var latitude, longitude, milesAway : Double?
+        public private(set) var latitude, longitude : Double?
+        public var milesAway: Double?
         
         init(storeInfo: NSDictionary) {
             
@@ -47,7 +48,7 @@ class Stores {
             self.googleRateLink = storeInfo["googleRateLink"] as? String ?? "www.google.com"
             self.latitude = storeInfo["latitude"] as? Double ?? 0.0
             self.longitude = storeInfo["longitude"] as? Double ?? 0.0
-            self.milesAway = 100.0
+            self.milesAway = -1.0
             self.managerName = storeInfo["managerName"] as? String ?? "Joel Queen"
             
             // Swap manager to top of list

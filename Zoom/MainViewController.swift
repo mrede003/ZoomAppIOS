@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
-class MainViewController: UIViewController {
+import CoreLocation
+import MapKit
+class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     var companyObj: Company?
     var promoList: Promos?
     var storeList: Stores?
+    
+    let locationManager = CLLocationManager()
     
 
     @IBAction func openWebpageButton(_ sender: UIButton) {
@@ -21,9 +24,16 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        companyObj?.printName()
-        promoList?.printPromos()
-        storeList?.printStores()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.delegate = self
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +51,19 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("locations = \(locations[0].coordinate.latitude) \(locations[0].coordinate.longitude)")
+        sortStoresByDistanceAway(userLocation: locations[0])
+    }
+    
+    func sortStoresByDistanceAway(userLocation : CLLocation) {
+        
+        // Calculate distance away from user and saved value in each store
+        for currentStore in (storeList?.storeList)! {
+            let coordinate = CLLocation(latitude: currentStore.latitude!, longitude: currentStore.longitude!)
+            currentStore.milesAway = 0.000621371 * (coordinate.distance(from: userLocation))
+        }
+    }
     
     // MARK: - Navigation
 

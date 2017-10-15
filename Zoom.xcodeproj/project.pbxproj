@@ -18,6 +18,7 @@
 		30CFF6141F92B52D00804C42 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CFF6021F92B43000804C42 /* libMailCore-ios.a */; };
 		30CFF6161F92B53300804C42 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CFF6151F92B53300804C42 /* CFNetwork.framework */; };
 		30CFF6181F92B53A00804C42 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CFF6171F92B53A00804C42 /* Security.framework */; };
+		30CFF6201F92DB6700804C42 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CFF61F1F92DB6700804C42 /* MapKit.framework */; };
 		30D5D6C41F622EA8009B722E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5D6C31F622EA8009B722E /* MainViewController.swift */; };
 		30D5D6C61F68BA09009B722E /* PromoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5D6C51F68BA09009B722E /* PromoListTableViewCell.swift */; };
 		30DC804F1F6F73930096073C /* LocationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC804E1F6F73930096073C /* LocationTableCell.swift */; };
@@ -116,6 +117,7 @@
 		30CFF5F41F92B42F00804C42 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../mailcore2/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
 		30CFF6151F92B53300804C42 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		30CFF6171F92B53A00804C42 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		30CFF61F1F92DB6700804C42 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		30D5D6C31F622EA8009B722E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		30D5D6C51F68BA09009B722E /* PromoListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoListTableViewCell.swift; sourceTree = "<group>"; };
 		30DC804E1F6F73930096073C /* LocationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableCell.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			files = (
 				30CFF6181F92B53A00804C42 /* Security.framework in Frameworks */,
 				30CFF6161F92B53300804C42 /* CFNetwork.framework in Frameworks */,
+				30CFF6201F92DB6700804C42 /* MapKit.framework in Frameworks */,
 				30CFF6141F92B52D00804C42 /* libMailCore-ios.a in Frameworks */,
 				92F9C92A72B1044A44770300 /* Pods_Zoom.framework in Frameworks */,
 			);
@@ -153,6 +156,7 @@
 		2376D78A94BA9198A0E6AC2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30CFF61F1F92DB6700804C42 /* MapKit.framework */,
 				30CFF6171F92B53A00804C42 /* Security.framework */,
 				30CFF6151F92B53300804C42 /* CFNetwork.framework */,
 				901893FDF2DA26657EB7DEBF /* Pods_Zoom.framework */,
@@ -280,6 +284,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = AW3CR8KPBN;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

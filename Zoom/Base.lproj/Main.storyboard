@@ -351,8 +351,12 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 Miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDc-pU-q70">
-                                            <rect key="frame" x="264.5" y="8" width="47.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.00 Miles" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDc-pU-q70">
+                                            <rect key="frame" x="271" y="0.0" width="41" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="29" id="GYI-fq-iEe"/>
+                                                <constraint firstAttribute="width" constant="41" id="t2A-ju-KvW"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -366,17 +370,20 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="exx-cz-jqV" firstAttribute="leading" secondItem="1Bk-c1-ROk" secondAttribute="trailing" constant="4" id="1db-ZV-nEv"/>
+                                        <constraint firstAttribute="trailing" secondItem="RDc-pU-q70" secondAttribute="trailing" constant="8" id="9L2-g5-Jzu"/>
                                         <constraint firstAttribute="trailing" secondItem="RDc-pU-q70" secondAttribute="trailing" constant="8" id="BqP-mb-CSg"/>
                                         <constraint firstItem="qaJ-dA-HzN" firstAttribute="top" secondItem="XQL-OS-niT" secondAttribute="top" constant="8" id="IZa-b9-Iu8"/>
                                         <constraint firstAttribute="trailing" secondItem="6iz-C3-Ura" secondAttribute="trailing" constant="8" id="PAu-Ss-bBb"/>
                                         <constraint firstAttribute="bottom" secondItem="1Bk-c1-ROk" secondAttribute="bottom" constant="7.5" id="QeF-Iu-NQw"/>
                                         <constraint firstItem="1Bk-c1-ROk" firstAttribute="top" secondItem="XQL-OS-niT" secondAttribute="top" constant="8" id="RHr-93-AiG"/>
+                                        <constraint firstItem="RDc-pU-q70" firstAttribute="leading" secondItem="qaJ-dA-HzN" secondAttribute="trailing" constant="9.5" id="UCC-38-GW9"/>
                                         <constraint firstItem="6iz-C3-Ura" firstAttribute="centerY" secondItem="1Bk-c1-ROk" secondAttribute="centerY" id="W8v-Rk-AAL"/>
                                         <constraint firstItem="6iz-C3-Ura" firstAttribute="height" secondItem="1Bk-c1-ROk" secondAttribute="height" multiplier="0.5" id="Wt8-yg-fye"/>
                                         <constraint firstItem="exx-cz-jqV" firstAttribute="top" secondItem="qaJ-dA-HzN" secondAttribute="bottom" constant="8" id="Ygf-fH-imY"/>
                                         <constraint firstItem="6iz-C3-Ura" firstAttribute="width" secondItem="1Bk-c1-ROk" secondAttribute="width" multiplier="0.5" id="bbU-fg-mYl"/>
-                                        <constraint firstItem="RDc-pU-q70" firstAttribute="top" secondItem="XQL-OS-niT" secondAttribute="top" constant="8" id="diP-Zo-mge"/>
+                                        <constraint firstItem="6iz-C3-Ura" firstAttribute="top" secondItem="RDc-pU-q70" secondAttribute="bottom" constant="0.5" id="fgG-ty-XZP"/>
                                         <constraint firstItem="1Bk-c1-ROk" firstAttribute="leading" secondItem="XQL-OS-niT" secondAttribute="leading" constant="5" id="nMH-MA-vsT"/>
+                                        <constraint firstItem="RDc-pU-q70" firstAttribute="top" secondItem="XQL-OS-niT" secondAttribute="top" id="nYu-EH-Ch3"/>
                                         <constraint firstItem="6iz-C3-Ura" firstAttribute="leading" secondItem="exx-cz-jqV" secondAttribute="trailing" constant="8" id="qpf-D8-FiA"/>
                                         <constraint firstItem="6iz-C3-Ura" firstAttribute="top" secondItem="RDc-pU-q70" secondAttribute="bottom" constant="0.5" id="tqZ-6I-Gzv"/>
                                         <constraint firstItem="qaJ-dA-HzN" firstAttribute="leading" secondItem="1Bk-c1-ROk" secondAttribute="trailing" constant="4" id="wiB-3z-Y6s"/>
@@ -402,7 +409,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psc-iE-HOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3598" y="1096"/>
+            <point key="canvasLocation" x="3596.25" y="1095.4225352112676"/>
         </scene>
         <!--Location-->
         <scene sceneID="XQR-K4-flI">
