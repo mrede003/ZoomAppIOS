@@ -11,7 +11,7 @@ import Foundation
 
 class Stores {
     
-    public private(set) var storeList : [Store]?
+    public var storeList : [Store]?
     
     init(storeDict: NSDictionary) {
         storeList = [Store]()
@@ -26,9 +26,7 @@ class Stores {
             storeList![i].printName()
         }
     }
-
-
-
+    
     class Store {
         public private(set) var staff: [String]?
         public private(set) var email, address, name, storeImg, bio, storeImgPre, phoneNumber, googleRateLink, managerName : String?

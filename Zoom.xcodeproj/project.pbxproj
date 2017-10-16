@@ -11,7 +11,7 @@
 		300353281ECE1D52003F6125 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300353271ECE1D52003F6125 /* ViewController.swift */; };
 		3003532B1ECE1D52003F6125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300353291ECE1D52003F6125 /* Main.storyboard */; };
 		3003532D1ECE1D52003F6125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3003532C1ECE1D52003F6125 /* Assets.xcassets */; };
-		308FF8501F23D5ED00DE408F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308FF84F1F23D5ED00DE408F /* GoogleService-Info.plist */; };
+		3023EF1B1F93F5DB00B31446 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3023EF1A1F93F5DB00B31446 /* GoogleService-Info.plist */; };
 		308FF8521F3A821200DE408F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FF8511F3A821200DE408F /* Company.swift */; };
 		30CA140C1F43BEAD0003E1CC /* Promos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CA140B1F43BEAD0003E1CC /* Promos.swift */; };
 		30CA140E1F43D8F10003E1CC /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CA140D1F43D8F10003E1CC /* Stores.swift */; };
@@ -109,7 +109,8 @@
 		3003532A1ECE1D52003F6125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3003532C1ECE1D52003F6125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		300353311ECE1D52003F6125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		308FF84F1F23D5ED00DE408F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3023EF111F93D63100B31446 /* Zoom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zoom.entitlements; sourceTree = "<group>"; };
+		3023EF1A1F93F5DB00B31446 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		308FF8511F3A821200DE408F /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		30CA140B1F43BEAD0003E1CC /* Promos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promos.swift; sourceTree = "<group>"; };
 		30CA140D1F43D8F10003E1CC /* Stores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
@@ -186,9 +187,10 @@
 		300353241ECE1D52003F6125 /* Zoom */ = {
 			isa = PBXGroup;
 			children = (
+				3023EF111F93D63100B31446 /* Zoom.entitlements */,
 				308FF8531F3A8BAF00DE408F /* ModelObj */,
-				308FF84F1F23D5ED00DE408F /* GoogleService-Info.plist */,
 				300353251ECE1D52003F6125 /* AppDelegate.swift */,
+				3023EF1A1F93F5DB00B31446 /* GoogleService-Info.plist */,
 				300353271ECE1D52003F6125 /* ViewController.swift */,
 				300353291ECE1D52003F6125 /* Main.storyboard */,
 				3003532C1ECE1D52003F6125 /* Assets.xcassets */,
@@ -285,7 +287,13 @@
 						DevelopmentTeam = AW3CR8KPBN;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -380,9 +388,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				308FF8501F23D5ED00DE408F /* GoogleService-Info.plist in Resources */,
 				3003532D1ECE1D52003F6125 /* Assets.xcassets in Resources */,
 				3003532B1ECE1D52003F6125 /* Main.storyboard in Resources */,
+				3023EF1B1F93F5DB00B31446 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E7C75D2EB437E4AE7E25339 /* Pods-Zoom.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Zoom/Zoom.entitlements;
 				DEVELOPMENT_TEAM = AW3CR8KPBN;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -661,6 +670,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4843952BA37944BB739A106E /* Pods-Zoom.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Zoom/Zoom.entitlements;
 				DEVELOPMENT_TEAM = AW3CR8KPBN;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

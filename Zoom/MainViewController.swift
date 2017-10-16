@@ -52,7 +52,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("locations = \(locations[0].coordinate.latitude) \(locations[0].coordinate.longitude)")
         sortStoresByDistanceAway(userLocation: locations[0])
     }
     
@@ -63,6 +62,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             let coordinate = CLLocation(latitude: currentStore.latitude!, longitude: currentStore.longitude!)
             currentStore.milesAway = 0.000621371 * (coordinate.distance(from: userLocation))
         }
+        
+        // Sort all store in storeList in descending order by distance away
+        storeList?.storeList = (storeList?.storeList)!.sorted(by: { $0.milesAway! < $1.milesAway! })
     }
     
     // MARK: - Navigation

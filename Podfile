@@ -6,8 +6,10 @@ target 'Zoom' do
   use_frameworks!
 
   # Pods for Zoom
-    pod 'Firebase'
-    pod 'Firebase/Database'
+    pod 'Firebase/Database’
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
+    pod 'Firebase/Auth'
     pod 'Kingfisher', '~> 4.0'
     pod 'Toast-Swift', '~> 2.0.0'
     pod 'mailcore2-ios'
