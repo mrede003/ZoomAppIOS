@@ -590,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E7C75D2EB437E4AE7E25339 /* Pods-Zoom.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Zoom/Zoom.entitlements;
 				DEVELOPMENT_TEAM = AW3CR8KPBN;
 				HEADER_SEARCH_PATHS = (
@@ -670,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4843952BA37944BB739A106E /* Pods-Zoom.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Zoom/Zoom.entitlements;
 				DEVELOPMENT_TEAM = AW3CR8KPBN;
 				HEADER_SEARCH_PATHS = (
