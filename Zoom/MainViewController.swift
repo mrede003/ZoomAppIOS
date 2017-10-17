@@ -15,15 +15,55 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     var promoList: Promos?
     var storeList: Stores?
     
-    let locationManager = CLLocationManager()
+    let backGroundImageOneNum = 1
+    let backGroundImageTwoNum = 2
+    let backGroundImageThreeNum = 3
+    let backGroundImageFourNum = 4
     
-
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
+    let locationManager = CLLocationManager()
     @IBAction func openWebpageButton(_ sender: UIButton) {
         UIApplication.shared.openURL(URL(string: (companyObj?.website_url)!)!)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Alternating background on load
+        let defaults = UserDefaults.standard
+        var background = defaults.integer(forKey: "background")
+        
+        // If this is the first time the app has been ran
+        if(background == 0) {
+            background = 1
+            setUpDefaultNotification()
+        }
+        
+        if(background == backGroundImageOneNum) {
+            backgroundImage.image = #imageLiteral(resourceName: "back_one")
+        }
+        
+        if(background == backGroundImageTwoNum) {
+            backgroundImage.image = #imageLiteral(resourceName: "back_two")
+        }
+        
+        if(background == backGroundImageThreeNum) {
+            backgroundImage.image = #imageLiteral(resourceName: "back_three")
+        }
+        
+        if(background == backGroundImageFourNum) {
+            backgroundImage.image = #imageLiteral(resourceName: "back_four")
+            background = backGroundImageOneNum
+        } else {
+            background += background
+        }
+        
+        defaults.set(background, forKey: "background")
+    }
+    
+    func setUpDefaultNotification() {
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
