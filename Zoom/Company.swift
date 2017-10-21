@@ -38,7 +38,7 @@ class Company {
     init(dictionary: NSDictionary)
     {
         self.apptEmails = dictionary["apptEmails"] as? [String] ?? ["Zoompass123"]
-        self.noti_delay = dictionary["noti_delay"] as? Int ?? 30000
+        self.noti_delay = dictionary["noti_delay"] as? Int ?? 7200
         self.noti_message = dictionary["noti_message"] as? String ?? "Notification Message"
         self.noti_title = dictionary["noti_title"] as? String ?? "Notification Title"
         self.monThursO = dictionary["monThursO"] as? String ?? "9AM"

@@ -49,7 +49,7 @@ class Stores {
             self.milesAway = -1.0
             self.managerName = storeInfo["managerName"] as? String ?? "Joel Queen"
             
-            // Swap manager to top of list
+            // Add manager to staff list
             self.staff?.append(managerName!)
             
         }

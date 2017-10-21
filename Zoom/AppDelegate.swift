@@ -9,16 +9,21 @@
 import UIKit
 import Firebase
 import UserNotifications
+import MapKit
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate{
     
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
+    let locationManager = CLLocationManager()
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        
+        // Request Location Authorization
+        locationManager.requestWhenInUseAuthorization()
         
         // [START set_messaging_delegate]
         Messaging.messaging().delegate = self
@@ -95,7 +100,9 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("Handle push from foreground\(notification.request.content.userInfo)")
         
-        let dict = notification.request.content.userInfo["aps"] as! NSDictionary
+        guard let dict = notification.request.content.userInfo["aps"] as? NSDictionary else {
+            return
+        }
         let d : [String : Any] = dict["alert"] as! [String : Any]
         let body : String = d["body"] as! String
         let title : String = d["title"] as! String

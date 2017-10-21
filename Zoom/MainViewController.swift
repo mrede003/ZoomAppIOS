@@ -9,11 +9,13 @@
 import UIKit
 import CoreLocation
 import MapKit
-class MainViewController: UIViewController, CLLocationManagerDelegate {
+import UserNotifications
+class MainViewController: UIViewController, CLLocationManagerDelegate{
     
     var companyObj: Company?
     var promoList: Promos?
     var storeList: Stores?
+    var firstTimeRun = false
     
     let backGroundImageOneNum = 1
     let backGroundImageTwoNum = 2
@@ -37,7 +39,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         // If this is the first time the app has been ran
         if(background == 0) {
             background = 1
-            setUpDefaultNotification()
+            firstTimeRun = true
         }
         
         if(background == backGroundImageOneNum) {
@@ -63,11 +65,37 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func setUpDefaultNotification() {
+        if #available(iOS 10.0, *) {
+            print("setUpNotifications ran")
+            let center = UNUserNotificationCenter.current()
+            center.getNotificationSettings { (settings) in
+                if settings.authorizationStatus != .authorized {
+                    // Notifications not allowed
+                    return
+                }
+                let content = UNMutableNotificationContent()
+                content.title = (self.companyObj?.noti_title)!
+                content.body = (self.companyObj?.noti_message)!
+                content.sound = UNNotificationSound.default()
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7200,
+                                                                repeats: false)
+                let identifier = "UYLLocalNotification"
+                let request = UNNotificationRequest(identifier: identifier,
+                                                    content: content, trigger: trigger)
+                center.add(request, withCompletionHandler: { (error) in
+                    if let error = error {
+                        print("Something went wrong")
+                    }
+                })
+            }
+        } else {
+            // Fallback on earlier version
+        }
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.locationManager.requestWhenInUseAuthorization()
+        NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: .UIApplicationWillResignActive, object: nil)
         self.locationManager.delegate = self
         
         if CLLocationManager.locationServicesEnabled() {
@@ -83,12 +111,23 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        if(firstTimeRun) {
+            setUpDefaultNotification()
+            firstTimeRun = false
+        }
         super.viewWillDisappear(animated)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func willResignActive(_ notification: Notification) {
+        if(firstTimeRun) {
+            setUpDefaultNotification()
+            firstTimeRun = false
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -136,6 +175,5 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             secondController.storeList = self.storeList
             
         }
-        
     }
 }
