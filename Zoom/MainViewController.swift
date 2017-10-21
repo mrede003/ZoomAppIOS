@@ -58,7 +58,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate{
             backgroundImage.image = #imageLiteral(resourceName: "back_four")
             background = backGroundImageOneNum
         } else {
-            background += background
+            background += 1
         }
         
         defaults.set(background, forKey: "background")
