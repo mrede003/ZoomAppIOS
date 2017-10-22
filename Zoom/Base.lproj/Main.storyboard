@@ -111,31 +111,31 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="m9q-bw-cx7">
                                         <rect key="frame" x="0.0" y="67.5" width="320" height="12.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oF-tK-gSa">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promos" textAlignment="center" lineBreakMode="tailTruncation" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oF-tK-gSa">
                                                 <rect key="frame" x="0.0" y="0.0" width="63" height="12.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appointment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0Y-8S-NZp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appointment" textAlignment="center" lineBreakMode="tailTruncation" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0Y-8S-NZp">
                                                 <rect key="frame" x="64" y="0.0" width="63.5" height="12.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJw-Ma-ckz">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locations" textAlignment="center" lineBreakMode="tailTruncation" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJw-Ma-ckz">
                                                 <rect key="frame" x="128.5" y="0.0" width="63" height="12.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Media" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNh-Pd-469">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Media" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNh-Pd-469">
                                                 <rect key="frame" x="192.5" y="0.0" width="63.5" height="12.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIg-XK-6Yy">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="center" lineBreakMode="tailTruncation" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIg-XK-6Yy">
                                                 <rect key="frame" x="257" y="0.0" width="63" height="12.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -176,7 +176,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="mNc-v5-wFd"/>
                     <connections>
+                        <outlet property="appointmentLabel" destination="V0Y-8S-NZp" id="4N6-7S-G9l"/>
                         <outlet property="backgroundImage" destination="WSM-Zs-YFS" id="0CA-W1-zSr"/>
+                        <outlet property="locationsLabel" destination="kJw-Ma-ckz" id="2xS-FQ-Dtn"/>
+                        <outlet property="promosLabel" destination="2oF-tK-gSa" id="wTd-9y-auB"/>
+                        <outlet property="socialMediaLabel" destination="rNh-Pd-469" id="oRv-Nx-wpT"/>
+                        <outlet property="websiteLabel" destination="pIg-XK-6Yy" id="3zL-Rf-BO0"/>
                         <segue destination="nqJ-ly-Yew" kind="show" identifier="" id="w11-cY-fbf"/>
                         <segue destination="WG7-Ar-eHb" kind="show" id="bmR-j8-zWu"/>
                         <segue destination="B7b-2t-ZhE" kind="show" id="Xr7-mq-orO"/>
@@ -1373,6 +1378,6 @@
         <segue reference="R9e-2o-bgJ"/>
         <segue reference="waf-Zt-K5J"/>
         <segue reference="Xr7-mq-orO"/>
-        <segue reference="TWQ-NC-p3D"/>
+        <segue reference="P1X-ZM-T73"/>
     </inferredMetricsTieBreakers>
 </document>

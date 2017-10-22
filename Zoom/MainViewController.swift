@@ -12,6 +12,13 @@ import MapKit
 import UserNotifications
 class MainViewController: UIViewController, CLLocationManagerDelegate{
     
+    
+    @IBOutlet weak var promosLabel: UILabel!
+    @IBOutlet weak var appointmentLabel: UILabel!
+    @IBOutlet weak var websiteLabel: UILabel!
+    @IBOutlet weak var socialMediaLabel: UILabel!
+    @IBOutlet weak var locationsLabel: UILabel!
+    
     var companyObj: Company?
     var promoList: Promos?
     var storeList: Stores?
@@ -64,6 +71,32 @@ class MainViewController: UIViewController, CLLocationManagerDelegate{
         defaults.set(background, forKey: "background")
     }
     
+    func setFontSize(size: CGFloat) {
+        promosLabel.font = UIFont.boldSystemFont(ofSize: size)
+        websiteLabel.font = UIFont.boldSystemFont(ofSize: size)
+        appointmentLabel.font = UIFont.boldSystemFont(ofSize: size)
+        locationsLabel.font = UIFont.boldSystemFont(ofSize: size)
+        socialMediaLabel.font = UIFont.boldSystemFont(ofSize: size)
+    }
+    
+    func getApproximateAdjustedFontSizeWithLabel(label: UILabel) -> CGFloat {
+        if label.adjustsFontSizeToFitWidth == true {
+            
+            var currentFont: UIFont = label.font
+            let originalFontSize = currentFont.pointSize
+            var currentSize: CGSize = (label.text! as NSString).size(attributes: [NSFontAttributeName: currentFont])
+            
+            while currentSize.width > label.frame.size.width && currentFont.pointSize > (originalFontSize * label.minimumScaleFactor) {
+                currentFont = currentFont.withSize(currentFont.pointSize - 1)
+                currentSize = (label.text! as NSString).size(attributes: [NSFontAttributeName: currentFont])
+            }
+            return currentFont.pointSize
+        }
+        else {
+            return label.font.pointSize
+        }
+    }
+    
     func setUpDefaultNotification() {
         if #available(iOS 10.0, *) {
             print("setUpNotifications ran")
@@ -102,6 +135,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate{
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        print(socialMediaLabel.font.pointSize)
+        print("font size")
+        setFontSize(size: getApproximateAdjustedFontSizeWithLabel(label: socialMediaLabel))
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -175,5 +211,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate{
             secondController.storeList = self.storeList
             
         }
+    }
+}
+
+extension UILabel{
+    var defaultFont: UIFont? {
+        get { return self.font }
+        set { self.font = newValue }
     }
 }
